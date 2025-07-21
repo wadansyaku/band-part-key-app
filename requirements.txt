@@ -1,0 +1,23 @@
+# Core Flask dependencies
+Flask
+Flask-CORS
+Flask-Session
+
+# PDF processing
+pymupdf
+pypdf
+pdf2image
+Pillow
+
+# Image processing and OCR  
+opencv-python
+pytesseract
+numpy
+
+# Utilities
+python-dotenv
+werkzeug
+gunicorn
+
+# File handling
+python-magic

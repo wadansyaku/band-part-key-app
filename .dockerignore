@@ -1,0 +1,13 @@
+*.pyc
+__pycache__
+venv/
+.env
+.venv
+uploads/
+temp/
+*.pdf
+.git
+.gitignore
+README.md
+test_*.py
+.DS_Store

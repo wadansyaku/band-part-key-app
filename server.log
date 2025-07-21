@@ -1,0 +1,4575 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5003
+Press CTRL+C to quit
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+127.0.0.1 - - [20/Jul/2025 22:29:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jul/2025 22:34:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jul/2025 22:34:26] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jul/2025 22:34:26] "GET /static/js/app.js HTTP/1.1" 304 -
+[2025-07-20 22:34:35,794] INFO in app: Uploading file: 忘れられないの.pdf -> pdf
+[2025-07-20 22:34:35,797] INFO in app: Saved file to: uploads/2640e573-29b2-40c5-9783-b8db53d7f527/pdf.pdf
+127.0.0.1 - - [20/Jul/2025 22:34:35] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-20 22:34:35,814] INFO in app: Analyzing file_id: 2640e573-29b2-40c5-9783-b8db53d7f527, filepath: uploads/2640e573-29b2-40c5-9783-b8db53d7f527/pdf.pdf
+127.0.0.1 - - [20/Jul/2025 22:34:35] "GET /api/analyze/2640e573-29b2-40c5-9783-b8db53d7f527 HTTP/1.1" 200 -
+[2025-07-20 22:34:48,927] INFO in app: Uploading file: 忘れられないの.pdf -> pdf
+[2025-07-20 22:34:48,930] INFO in app: Saved file to: uploads/d9f151b3-d809-4f44-8c4c-f426c73013f9/pdf.pdf
+127.0.0.1 - - [20/Jul/2025 22:34:48] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-20 22:34:48,936] INFO in app: Analyzing file_id: d9f151b3-d809-4f44-8c4c-f426c73013f9, filepath: uploads/d9f151b3-d809-4f44-8c4c-f426c73013f9/pdf.pdf
+127.0.0.1 - - [20/Jul/2025 22:34:48] "GET /api/analyze/d9f151b3-d809-4f44-8c4c-f426c73013f9 HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jul/2025 22:51:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jul/2025 22:51:22] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jul/2025 22:51:22] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jul/2025 22:51:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jul/2025 22:51:25] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jul/2025 22:51:25] "GET /static/js/app.js HTTP/1.1" 304 -
+[2025-07-20 22:51:36,639] INFO in app: Uploading file: 忘れられないの.pdf -> pdf
+[2025-07-20 22:51:36,641] INFO in app: Saved file to: uploads/bec237f5-9fc1-40ef-97cf-d09f6e47bbaf/pdf.pdf
+127.0.0.1 - - [20/Jul/2025 22:51:36] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-20 22:51:36,647] INFO in app: Analyzing file_id: bec237f5-9fc1-40ef-97cf-d09f6e47bbaf, filepath: uploads/bec237f5-9fc1-40ef-97cf-d09f6e47bbaf/pdf.pdf
+127.0.0.1 - - [20/Jul/2025 22:51:36] "GET /api/analyze/bec237f5-9fc1-40ef-97cf-d09f6e47bbaf HTTP/1.1" 200 -
+[2025-07-20 22:52:07,289] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [20/Jul/2025 22:52:11] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jul/2025 22:52:11] "GET /api/download/bec237f5-9fc1-40ef-97cf-d09f6e47bbaf_smart HTTP/1.1" 200 -
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.43305.1753020277439', reloading
+
+ページ 1 を処理中...
+  システム 1:
+    vocal: Vocal (Y: 438.1 - 465.2)
+    chord: (Que Wind Chime) (Y: 458.2 - 620.8)
+    keyboard: Keyboard I (Y: 637.8 - 692.4)
+    除外: Bass
+    除外: Drums
+
+ページ 2 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.8 - 128.2)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 262.2 - 316.9)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 439.3 - 504.7)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 638.8 - 693.4)
+    除外: Ba.
+    除外: Dr.
+
+ページ 3 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.2 - 127.5)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 261.6 - 316.2)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 438.7 - 504.0)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 638.1 - 692.8)
+    除外: Ba.
+    除外: Dr.
+
+ページ 4 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.2 - 127.5)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 261.6 - 316.2)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 438.7 - 504.0)
+    除外: Gt. I
+    除外: Gt. II
+    除外: (Synth. Bass)
+    keyboard: Keyb. I (Y: 638.1 - 692.8)
+    除外: Ba.
+    除外: Dr.
+
+ページ 5 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 61.5 - 126.8)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 260.9 - 315.6)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 438.0 - 503.3)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.) (Y: 620.2 - 644.9)
+    keyboard: Keyb. I (Y: 637.4 - 692.1)
+    除外: Ba.
+    除外: Dr.
+
+ページ 6 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.2 - 127.5)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 261.6 - 316.3)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 438.7 - 504.1)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 638.1 - 692.8)
+    除外: Ba.
+    除外: Dr.
+
+ページ 7 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.2 - 127.5)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 261.6 - 316.2)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 438.7 - 504.0)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 638.1 - 692.8)
+    除外: Ba.
+    除外: Dr.
+
+ページ 8 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.6 - 127.9)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 262.0 - 316.7)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 439.1 - 504.5)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 638.5 - 693.2)
+    除外: Ba.
+    除外: Dr.
+
+ページ 9 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.2 - 127.5)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.) (Y: 244.4 - 269.0)
+    keyboard: Keyb. I (Y: 261.6 - 316.2)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 438.7 - 504.0)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 638.1 - 692.8)
+    除外: Ba.
+    除外: Dr.
+
+ページ 10 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.2 - 127.5)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 261.6 - 316.2)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 438.7 - 504.0)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 638.1 - 692.8)
+    除外: Ba.
+    除外: Dr.
+
+ページ 11 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.2 - 127.5)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 261.6 - 316.3)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 438.7 - 504.1)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 638.1 - 692.8)
+    除外: Ba.
+    除外: Dr.
+
+ページ 12 を処理中...
+  システム 1:
+    vocal: Vo. (Y: 62.6 - 128.0)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 264.9 - 317.2)
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo. (Y: 438.8 - 504.1)
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I (Y: 638.2 - 692.9)
+    除外: Ba.
+    除外: Dr.
+
+ページ 13 を処理中...
+  システム 1:
+    keyboard: Keyboard II (Y: 60.4 - 117.6)
+    keyboard: Keyboard III (Y: 115.9 - 171.7)
+    keyboard: Keyboard IV (Y: 169.7 - 302.4)
+    keyboard: Keyb.II (Y: 314.1 - 371.3)
+    keyboard: Keyb.III (Y: 369.6 - 425.3)
+    keyboard: Keyb.IV (Y: 423.4 - 556.1)
+    keyboard: Keyb.II (Y: 567.7 - 625.0)
+    keyboard: Keyb.III (Y: 623.3 - 679.0)
+    keyboard: Keyb.IV (Y: 677.1 - 732.9)
+
+ページ 14 を処理中...
+  システム 1:
+    keyboard: Keyb.II (Y: 59.5 - 116.7)
+    keyboard: Keyb.III (Y: 115.0 - 170.8)
+    keyboard: Keyb.IV (Y: 168.9 - 301.5)
+    keyboard: Keyb.II (Y: 313.2 - 370.4)
+    keyboard: Keyb.III (Y: 368.7 - 424.5)
+    keyboard: Keyb.IV (Y: 422.5 - 555.2)
+    keyboard: Keyb.II (Y: 566.9 - 624.1)
+    keyboard: Keyb.III (Y: 622.4 - 678.2)
+    keyboard: Keyb.IV (Y: 676.2 - 732.0)
+
+ページ 15 を処理中...
+  システム 1:
+    keyboard: Keyb.II (Y: 60.2 - 106.1)
+    keyboard: (Synth.) (Y: 102.5 - 123.7)
+    keyboard: Keyb.III (Y: 115.7 - 157.1)
+    keyboard: (Synth. Strings) (Y: 152.6 - 177.0)
+    keyboard: Keyb.IV (Y: 169.6 - 302.2)
+    keyboard: Keyb.II (Y: 313.9 - 371.1)
+    keyboard: Keyb.III (Y: 369.4 - 425.2)
+    keyboard: Keyb.IV (Y: 423.3 - 555.9)
+    keyboard: Keyb.II (Y: 567.6 - 624.8)
+    keyboard: Keyb.III (Y: 623.1 - 678.9)
+    keyboard: Keyb.IV (Y: 676.9 - 732.7)
+
+ページ 16 を処理中...
+  システム 1:
+    keyboard: Keyb.II (Y: 60.2 - 117.4)
+    keyboard: Keyb.III (Y: 115.7 - 171.5)
+    keyboard: Keyb.IV (Y: 169.6 - 302.2)
+    keyboard: Keyb.II (Y: 313.9 - 371.1)
+    keyboard: Keyb.III (Y: 369.4 - 425.2)
+    keyboard: Keyb.IV (Y: 423.3 - 555.9)
+    keyboard: Keyb.II (Y: 567.6 - 624.8)
+    keyboard: Keyb.III (Y: 623.1 - 678.9)
+    keyboard: Keyb.IV (Y: 676.9 - 732.7)
+
+ページ 17 を処理中...
+  システム 1:
+    keyboard: Keyb.II (Y: 60.2 - 106.1)
+    keyboard: (Synth.) (Y: 102.5 - 123.7)
+    keyboard: Keyb.III (Y: 115.7 - 171.5)
+    keyboard: Keyb.IV (Y: 169.6 - 302.2)
+    keyboard: Keyb.II (Y: 313.9 - 371.1)
+    keyboard: Keyb.III (Y: 369.4 - 425.2)
+    keyboard: Keyb.IV (Y: 423.3 - 555.9)
+    keyboard: Keyb.II (Y: 567.6 - 624.8)
+    keyboard: Keyb.III (Y: 623.1 - 678.9)
+    keyboard: Keyb.IV (Y: 676.9 - 732.7)
+
+ページ 18 を処理中...
+  システム 1:
+    keyboard: Keyb.II (Y: 59.5 - 116.7)
+    keyboard: Keyb.III (Y: 115.0 - 170.8)
+    keyboard: Keyb.IV (Y: 168.9 - 301.5)
+    keyboard: Keyb.II (Y: 313.2 - 370.4)
+    keyboard: Keyb.III (Y: 368.7 - 424.5)
+    keyboard: Keyb.IV (Y: 422.5 - 555.2)
+    keyboard: Keyb.II (Y: 566.9 - 624.1)
+    keyboard: Keyb.III (Y: 622.4 - 678.2)
+    keyboard: Keyb.IV (Y: 676.2 - 732.0)
+
+ページ 19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.II' at y=69.1
+      OCR検出: 'Keyb.ll' at y=312.5
+      OCR検出: 'Keyb.II' at y=562.7
+      OCR検出: 'Keyblll' at y=619.9
+      OCR検出: 'Keyb.IV' at y=672.1
+  システム 1:
+    keyboard: Keyb.II (Y: 59.1 - 276.0)
+  システム 2:
+    keyboard: Keyb.ll (Y: 302.5 - 525.1)
+  システム 3:
+    keyboard: Keyb.II (Y: 552.7 - 611.3)
+    keyboard: Keyblll (Y: 609.9 - 664.3)
+    keyboard: Keyb.IV (Y: 662.1 - 716.5)
+
+抽出完了: uploads/bec237f5-9fc1-40ef-97cf-d09f6e47bbaf/pdf_precise.pdf
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/app.py.tmp.43305.1753020291968', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/app.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.43305.1753020350486', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.43305.1753020376056', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+127.0.0.1 - - [21/Jul/2025 00:07:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 00:07:55] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Jul/2025 00:07:55] "GET /static/js/app.js HTTP/1.1" 304 -
+[2025-07-21 00:08:12,435] INFO in app: Uploading file: 忘れられないの.pdf -> pdf
+[2025-07-21 00:08:12,438] INFO in app: Saved file to: uploads/bebab0f0-ee36-44ad-bd97-97111f3ca6f6/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 00:08:12] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-21 00:08:12,463] INFO in app: Analyzing file_id: bebab0f0-ee36-44ad-bd97-97111f3ca6f6, filepath: uploads/bebab0f0-ee36-44ad-bd97-97111f3ca6f6/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 00:08:12] "GET /api/analyze/bebab0f0-ee36-44ad-bd97-97111f3ca6f6 HTTP/1.1" 200 -
+[2025-07-21 00:08:39,581] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 00:08:46] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 00:08:46] "GET /api/download/bebab0f0-ee36-44ad-bd97-97111f3ca6f6_smart HTTP/1.1" 200 -
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.43305.1753024567567', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+
+ページ 1 を処理中...
+  システム 1:
+    vocal: Vocal
+    chord: (Que Wind Chime)
+    keyboard: Keyboard I
+    除外: Bass
+    除外: Drums
+
+ページ 2 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 3 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 4 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    除外: (Synth. Bass)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 5 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 6 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 7 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 8 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 9 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 10 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 11 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 12 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 13 を処理中...
+  システム 1:
+    keyboard: Keyboard II
+    keyboard: Keyboard III
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 14 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 15 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 16 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 17 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 18 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.II' at y=69.1
+      OCR検出: 'Keyb.ll' at y=312.5
+      OCR検出: 'Keyb.II' at y=562.7
+      OCR検出: 'Keyblll' at y=619.9
+      OCR検出: 'Keyb.IV' at y=672.1
+  システム 1:
+    keyboard: Keyb.II
+  システム 2:
+    keyboard: Keyb.ll
+  システム 3:
+    keyboard: Keyb.II
+    keyboard: Keyblll
+    keyboard: Keyb.IV
+
+抽出完了: uploads/bebab0f0-ee36-44ad-bd97-97111f3ca6f6/pdf_measure_based.pdf
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+127.0.0.1 - - [21/Jul/2025 00:27:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 00:27:07] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Jul/2025 00:27:07] "GET /static/js/app.js HTTP/1.1" 200 -
+[2025-07-21 00:27:18,766] INFO in app: Uploading file: 忘れられないの.pdf -> pdf
+[2025-07-21 00:27:18,769] INFO in app: Saved file to: uploads/da5dfebc-fc54-474a-b39a-bf836a3eebdb/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 00:27:18] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-21 00:27:18,778] INFO in app: Analyzing file_id: da5dfebc-fc54-474a-b39a-bf836a3eebdb, filepath: uploads/da5dfebc-fc54-474a-b39a-bf836a3eebdb/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 00:27:18] "GET /api/analyze/da5dfebc-fc54-474a-b39a-bf836a3eebdb HTTP/1.1" 200 -
+[2025-07-21 00:27:25,761] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 00:27:29] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 00:27:29] "GET /api/download/da5dfebc-fc54-474a-b39a-bf836a3eebdb_smart HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 00:28:30] "POST /api/extract HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 2552, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 2532, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 1845, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 2138, in make_response
+    raise TypeError(
+TypeError: The view function for 'extract_parts' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [21/Jul/2025 00:28:43] "POST /api/extract HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 2552, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 2532, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 1845, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/flask/app.py", line 2138, in make_response
+    raise TypeError(
+TypeError: The view function for 'extract_parts' did not return a valid response. The function either returned None or ended without a return statement.
+ * Detected change in '/Users/Yodai/band_part_key_app/app.py.tmp.43305.1753025494435', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/app.py', reloading
+
+ページ 1/19 を処理中...
+  システム 1:
+    vocal: Vocal
+    chord: (Que Wind Chime)
+    keyboard: Keyboard I
+    除外: Bass
+    除外: Drums
+
+ページ 2/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 3/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 4/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    除外: (Synth. Bass)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 5/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 6/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 7/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 8/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 9/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 10/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 11/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 12/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 13/19 を処理中...
+  システム 1:
+    keyboard: Keyboard II
+    keyboard: Keyboard III
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 14/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 15/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 16/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 17/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 18/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 19/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.II' at y=69.1
+      OCR検出: 'Keyb.ll' at y=312.5
+      OCR検出: 'Keyb.II' at y=562.7
+      OCR検出: 'Keyblll' at y=619.9
+      OCR検出: 'Keyb.IV' at y=672.1
+  システム 1:
+    keyboard: Keyb.II
+  システム 2:
+    keyboard: Keyb.ll
+  システム 3:
+    keyboard: Keyb.II
+    keyboard: Keyblll
+    keyboard: Keyb.IV
+
+抽出完了: uploads/da5dfebc-fc54-474a-b39a-bf836a3eebdb/pdf_measure_based.pdf
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.43305.1753025611227', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/tests/test_ocr_extraction.py', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/tests/test_universal.py', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/tests/test_part_extraction.py', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/tests/test_measure_extraction.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/test_precise_extraction.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+127.0.0.1 - - [21/Jul/2025 00:38:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 00:38:52] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Jul/2025 00:38:52] "GET /static/js/app.js HTTP/1.1" 304 -
+[2025-07-21 00:39:00,216] INFO in app: Uploading file: 忘れられないの.pdf -> pdf
+[2025-07-21 00:39:00,222] INFO in app: Saved file to: uploads/b4e31cfb-9338-4432-b5a8-5674647c988b/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 00:39:00] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-21 00:39:00,239] INFO in app: Analyzing file_id: b4e31cfb-9338-4432-b5a8-5674647c988b, filepath: uploads/b4e31cfb-9338-4432-b5a8-5674647c988b/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 00:39:00] "GET /api/analyze/b4e31cfb-9338-4432-b5a8-5674647c988b HTTP/1.1" 200 -
+[2025-07-21 00:39:05,629] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 00:39:11] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 00:39:11] "GET /api/download/b4e31cfb-9338-4432-b5a8-5674647c988b_smart HTTP/1.1" 200 -
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753026327349', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+
+ページ 1/19 を処理中...
+  システム 1:
+    vocal: Vocal
+    chord: (Que Wind Chime)
+    keyboard: Keyboard I
+    除外: Bass
+    除外: Drums
+
+ページ 2/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 3/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 4/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    除外: (Synth. Bass)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 5/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 6/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 7/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 8/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 9/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 10/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 11/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 12/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 13/19 を処理中...
+  システム 1:
+    keyboard: Keyboard II
+    keyboard: Keyboard III
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 14/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 15/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 16/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 17/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 18/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 19/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.II' at y=69.1
+      OCR検出: 'Keyb.ll' at y=312.5
+      OCR検出: 'Keyb.II' at y=562.7
+      OCR検出: 'Keyblll' at y=619.9
+      OCR検出: 'Keyb.IV' at y=672.1
+  システム 1:
+    keyboard: Keyb.II
+  システム 2:
+    keyboard: Keyb.ll
+  システム 3:
+    keyboard: Keyb.II
+    keyboard: Keyblll
+    keyboard: Keyb.IV
+
+抽出完了: uploads/b4e31cfb-9338-4432-b5a8-5674647c988b/pdf_measure_based.pdf
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753026377968', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/app.py.tmp.57298.1753026407668', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/app.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753026514830', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753026585137', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753026684130', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753026731703', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+127.0.0.1 - - [21/Jul/2025 01:05:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 01:05:41] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 01:05:41] "GET /static/js/app.js HTTP/1.1" 200 -
+[2025-07-21 01:05:51,466] INFO in app: Uploading file: 忘れられないの.pdf -> pdf
+[2025-07-21 01:05:51,470] INFO in app: Saved file to: uploads/08627d26-70a9-4ec4-ab6a-4af4ec5fdadc/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 01:05:51] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-21 01:05:51,480] INFO in app: Analyzing file_id: 08627d26-70a9-4ec4-ab6a-4af4ec5fdadc, filepath: uploads/08627d26-70a9-4ec4-ab6a-4af4ec5fdadc/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 01:05:51] "GET /api/analyze/08627d26-70a9-4ec4-ab6a-4af4ec5fdadc HTTP/1.1" 200 -
+[2025-07-21 01:06:00,123] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 01:06:07] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 01:06:07] "GET /api/download/08627d26-70a9-4ec4-ab6a-4af4ec5fdadc_smart HTTP/1.1" 200 -
+[2025-07-21 01:07:26,526] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+
+ページ 1/19 を処理中...
+  システム 1:
+    vocal: Vocal
+    chord: (Que Wind Chime)
+    keyboard: Keyboard I
+    除外: Bass
+    除外: Drums
+
+ページ 2/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 3/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 4/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    除外: (Synth. Bass)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 5/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 6/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 7/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 8/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 9/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 10/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 11/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 12/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 13/19 を処理中...
+  システム 1:
+    keyboard: Keyboard II
+    keyboard: Keyboard III
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 14/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 15/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 16/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 17/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 18/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 19/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.II' at y=69.1
+      OCR検出: 'Keyb.ll' at y=312.5
+      OCR検出: 'Keyb.II' at y=562.7
+      OCR検出: 'Keyblll' at y=619.9
+      OCR検出: 'Keyb.IV' at y=672.1
+  システム 1:
+    keyboard: Keyb.II
+  システム 2:
+    keyboard: Keyb.ll
+  システム 3:
+    keyboard: Keyb.II
+    keyboard: Keyblll
+    keyboard: Keyb.IV
+
+抽出完了: uploads/08627d26-70a9-4ec4-ab6a-4af4ec5fdadc/pdf_measure_based_8m.pdf
+
+ページ 1/8 を処理中...
+  システム 1:
+    chord: (Que Wind Chime)
+    除外: Gt. I
+    除外: Gt. I
+    除外: Ba.
+    vocal: Vo.
+    除外: Gt. II
+    除外: Dr.
+    vocal: Vocal
+    除外: Gt. II
+    vocal: Vocal
+    vocal: Vocal
+    chord: (Que Wind Chime)
+    vocal: Vo.
+    chord: (Que Wind Chime)
+    chord: (Que Wind Chime)
+    keyboard: Keyb. I
+    除外: Gt. I
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyboard I
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Bass
+    除外: Gt. II
+    vocal: Vo.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Drums
+    除外: Gt. II
+    keyboard: Keyboard I
+    除外: Gt. II
+    除外: Gt. I
+    keyboard: Keyboard I
+    keyboard: Keyboard I
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Ba.
+    vocal: Vo.
+    除外: Bass
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Bass
+    除外: Bass
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: Drums
+    除外: Gt. II
+    除外: Drums
+    除外: Drums
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. II
+    除外: Gt. I
+    除外: Ba.
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    除外: Dr.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    除外: Gt. II
+    vocal: Vo.
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: (Synth. Bass)
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: (Synth. Bass)
+
+ページ 2/8 を処理中...
+  システム 1:
+    vocal: Vo.
+    vocal: Vo.
+    vocal: Vo.
+    vocal: Vo.
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    除外: Gt. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+    除外: Gt. I
+    除外: Dr.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Gt. II
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Gt. I
+    keyboard: Keyb. I
+    vocal: Vo.
+    keyboard: (Synth.)
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. I
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Dr.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. II
+    除外: Ba.
+    keyboard: (Synth.)
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Dr.
+    除外: Ba.
+    vocal: Vo.
+    除外: Ba.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Dr.
+    vocal: Vo.
+    除外: Ba.
+    除外: Gt. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. II
+    keyboard: (Synth.)
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Gt. II
+    除外: Gt. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. II
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    keyboard: (Synth.)
+    除外: Dr.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Gt. II
+    vocal: Vo.
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. II
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Dr.
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb I
+
+ページ 3/8 を処理中...
+  システム 1:
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Gt. I
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    除外: Dr.
+    keyboard: Keyb. I
+    keyboard: (Synth.)
+    vocal: Vo.
+    除外: Gt. II
+    除外: Gt. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. II
+    vocal: Vo.
+    除外: Ba.
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Ba.
+    vocal: Vo.
+    vocal: Vo.
+    除外: Gt. II
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    keyboard: (Synth.)
+    除外: Dr.
+    除外: Gt. I
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    vocal: Vo.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Ba.
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. II
+    除外: Gt. II
+    除外: Gt. I
+    vocal: Vo.
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    除外: Dr.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    除外: Gt. II
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    vocal: Vo.
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+    除外: Gt. II
+    除外: Gt. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. I
+    除外: Ba.
+    vocal: Vo.
+    除外: Ba.
+    除外: Gt. I
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    vocal: Vo.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    除外: Dr.
+    除外: Dr.
+    除外: Gt. I
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. II
+    vocal: Vo.
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. II
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Gt. I
+    除外: Dr.
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb I
+
+ページ 4/8 を処理中...
+  システム 1:
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyboard II
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyboard II
+    keyboard: Keyb.III
+    keyboard: Keyboard II
+    keyboard: Keyb.III
+    keyboard: Keyboard III
+    keyboard: Keyb.III
+    keyboard: Keyboard III
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    除外: (Ele.Steel Drums)
+    keyboard: Keyboard III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    除外: (Ele.Steel Drums)
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 5/8 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: (Synth.)
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: (Synth. Strings)
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: (Synth. Strings)
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+
+ページ 6/8 を処理中...
+  システム 1:
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+
+ページ 7/8 を処理中...
+  システム 1:
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+
+ページ 8/8 を処理中...
+  システム 1:
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+127.0.0.1 - - [21/Jul/2025 01:07:35] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 01:07:35] "GET /api/download/08627d26-70a9-4ec4-ab6a-4af4ec5fdadc_smart HTTP/1.1" 200 -
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028036010', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+    keyboard: Keyb.IV
+
+抽出完了: uploads/08627d26-70a9-4ec4-ab6a-4af4ec5fdadc/pdf_measure_based_8m_measure_based_4m.pdf
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028048637', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028075442', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028124473', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028137598', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028431083', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028445150', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028461957', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028608301', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/app.py.tmp.57298.1753028763988', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/app.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753028788379', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+127.0.0.1 - - [21/Jul/2025 07:09:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 07:09:47] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Jul/2025 07:09:47] "GET /static/js/app.js HTTP/1.1" 200 -
+[2025-07-21 09:25:12,711] INFO in app: Uploading file: 忘れられないの.pdf -> pdf
+[2025-07-21 09:25:12,720] INFO in app: Saved file to: uploads/03dd1a3b-f7bb-4081-9f55-80d2e3837a7e/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 09:25:12] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-21 09:25:12,758] INFO in app: Analyzing file_id: 03dd1a3b-f7bb-4081-9f55-80d2e3837a7e, filepath: uploads/03dd1a3b-f7bb-4081-9f55-80d2e3837a7e/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 09:25:12] "GET /api/analyze/03dd1a3b-f7bb-4081-9f55-80d2e3837a7e HTTP/1.1" 200 -
+[2025-07-21 09:25:20,585] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 09:25:27] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 09:25:27] "GET /api/download/03dd1a3b-f7bb-4081-9f55-80d2e3837a7e_smart HTTP/1.1" 200 -
+[2025-07-21 09:25:44,470] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+
+ページ 1/19 を処理中...
+  システム 1:
+    vocal: Vocal
+    keyboard: Keyboard I
+    除外: Bass
+    除外: Drums
+
+ページ 2/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 3/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 4/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    除外: (Synth. Bass)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 5/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 6/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 7/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 8/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 9/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 10/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 11/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 12/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+
+ページ 13/19 を処理中...
+  システム 1:
+    keyboard: Keyboard II
+    keyboard: Keyboard III
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 14/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 15/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 16/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 17/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 18/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 19/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.II' at y=69.1
+      OCR検出: 'Keyb.ll' at y=312.5
+      OCR検出: 'Keyb.II' at y=562.7
+      OCR検出: 'Keyblll' at y=619.9
+      OCR検出: 'Keyb.IV' at y=672.1
+  システム 1:
+    keyboard: Keyb.II
+  システム 2:
+    keyboard: Keyb.ll
+  システム 3:
+    keyboard: Keyb.II
+    keyboard: Keyblll
+    keyboard: Keyb.IV
+
+抽出完了: uploads/03dd1a3b-f7bb-4081-9f55-80d2e3837a7e/pdf_measure_based_8m.pdf
+
+ページ 1/7 を処理中...
+  システム 1:
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    除外: Gt. II
+    除外: Dr.
+    除外: Gt. II
+    vocal: Vo.
+    vocal: Vocal
+    keyboard: Keyb. I
+    除外: Gt. I
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyboard I
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Bass
+    除外: Gt. I
+    除外: Gt. II
+    vocal: Vo.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Drums
+    除外: Gt. II
+    除外: Gt. II
+    除外: Gt. I
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyboard I
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Bass
+    除外: Gt. I
+    除外: Gt. II
+    除外: Dr.
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Drums
+    vocal: Vo.
+    vocal: Vo.
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. II
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    vocal: Vo.
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: (Synth. Bass)
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: (Synth. Bass)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+
+ページ 2/7 を処理中...
+  システム 1:
+    vocal: Vo.
+    vocal: Vo.
+    vocal: Vo.
+    除外: Ba.
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    vocal: Vo.
+    除外: Ba.
+    除外: Gt. II
+    除外: Gt. II
+    vocal: Vo.
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Gt. I
+    keyboard: Keyb. I
+    keyboard: (Synth.)
+    vocal: Vo.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    vocal: Vo.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Dr.
+    除外: Dr.
+    vocal: Vo.
+    除外: Ba.
+    除外: Gt. II
+    keyboard: (Synth.)
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. I
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    除外: Ba.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    除外: Gt. II
+    除外: Dr.
+    vocal: Vo.
+    除外: Dr.
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    vocal: Vo.
+    vocal: Vo.
+    除外: Gt. II
+    除外: Gt. I
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. II
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    vocal: Vo.
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    vocal: Vo.
+    除外: Ba.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+
+ページ 3/7 を処理中...
+  システム 1:
+    keyboard: (Synth.)
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Gt. I
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    vocal: Vo.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    除外: Dr.
+    keyboard: Keyb. I
+    keyboard: (Synth.)
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Gt. II
+    除外: Ba.
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    vocal: Vo.
+    除外: Gt. II
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    keyboard: (Synth.)
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    除外: Gt. II
+    vocal: Vo.
+    vocal: Vo.
+    除外: Dr.
+    vocal: Vo.
+    除外: Ba.
+    vocal: Vo.
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Gt. II
+    除外: Gt. II
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    vocal: Vo.
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    vocal: Vo.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Ba.
+    除外: Gt. I
+    除外: Ba.
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Gt. I
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    vocal: Vo.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Dr.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    vocal: Vo.
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Dr.
+    vocal: Vo.
+    除外: Ba.
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Dr.
+    keyboard: Keyb. I
+    除外: Gt. II
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. I
+    vocal: Vo.
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    keyboard: Keyb. I
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. I
+    除外: Gt. II
+    除外: Gt. II
+    除外: Dr.
+    除外: Dr.
+    除外: Ba.
+    除外: Gt. II
+    vocal: Vo.
+    除外: Dr.
+    keyboard: Keyb. I
+    keyboard: Keyb. I
+    vocal: Vo.
+    除外: Gt. II
+
+ページ 4/7 を処理中...
+  システム 1:
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyboard II
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyboard II
+    keyboard: Keyb.III
+    keyboard: Keyboard II
+    keyboard: Keyb.III
+    keyboard: Keyboard III
+    keyboard: Keyb.III
+    keyboard: Keyboard III
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyboard III
+    keyboard: Keyb.II
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    除外: (Ele.Steel Drums)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+127.0.0.1 - - [21/Jul/2025 09:25:51] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 09:25:51] "GET /api/download/03dd1a3b-f7bb-4081-9f55-80d2e3837a7e_smart HTTP/1.1" 200 -
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753057913771', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+
+ページ 5/7 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth. Strings)
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: (Synth. Strings)
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+
+ページ 6/7 を処理中...
+  システム 1:
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: (Synth.)
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.III
+
+ページ 7/7 を処理中...
+    OCRを実行中...
+
+抽出完了: uploads/03dd1a3b-f7bb-4081-9f55-80d2e3837a7e/pdf_measure_based_8m_measure_based_4m.pdf
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753058002563', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753058036759', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+127.0.0.1 - - [21/Jul/2025 10:10:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 10:10:57] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Jul/2025 10:10:57] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Jul/2025 10:11:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 10:11:02] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Jul/2025 10:11:02] "GET /static/css/style.css HTTP/1.1" 304 -
+[2025-07-21 10:11:10,314] INFO in app: Uploading file: 夏祭り.pdf -> pdf
+[2025-07-21 10:11:10,319] INFO in app: Saved file to: uploads/91d2aa0f-27e8-4822-b075-945cc3f4a833/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 10:11:10] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-21 10:11:10,354] INFO in app: Analyzing file_id: 91d2aa0f-27e8-4822-b075-945cc3f4a833, filepath: uploads/91d2aa0f-27e8-4822-b075-945cc3f4a833/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 10:11:10] "GET /api/analyze/91d2aa0f-27e8-4822-b075-945cc3f4a833 HTTP/1.1" 200 -
+[2025-07-21 10:11:14,292] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 10:11:25] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 10:11:25] "GET /api/download/91d2aa0f-27e8-4822-b075-945cc3f4a833_smart HTTP/1.1" 200 -
+[2025-07-21 10:11:50,492] INFO in app: Uploading file: 忘れられないの.pdf -> pdf
+[2025-07-21 10:11:50,496] INFO in app: Saved file to: uploads/ef8d7fee-add0-4d45-b7a2-f4edf4bbfe2f/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 10:11:50] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-21 10:11:50,503] INFO in app: Analyzing file_id: ef8d7fee-add0-4d45-b7a2-f4edf4bbfe2f, filepath: uploads/ef8d7fee-add0-4d45-b7a2-f4edf4bbfe2f/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 10:11:50] "GET /api/analyze/ef8d7fee-add0-4d45-b7a2-f4edf4bbfe2f HTTP/1.1" 200 -
+[2025-07-21 10:11:53,208] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 10:11:56] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 10:11:56] "GET /api/download/ef8d7fee-add0-4d45-b7a2-f4edf4bbfe2f_smart HTTP/1.1" 200 -
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753061472197', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+
+ページ 1/10 を処理中...
+    OCRを実行中...
+
+ページ 2/10 を処理中...
+    OCRを実行中...
+      OCR検出: 'Gtl' at y=202.0
+      OCR検出: 'Dr.' at y=649.8
+      OCR検出: 'Gtl' at y=930.2
+  システム 1:
+  システム 2:
+    除外: Dr.
+  システム 3:
+
+ページ 3/10 を処理中...
+    OCRを実行中...
+
+ページ 4/10 を処理中...
+    OCRを実行中...
+
+ページ 5/10 を処理中...
+    OCRを実行中...
+      OCR検出: 'Gtl' at y=210.6
+      OCR検出: 'Gtll' at y=352.8
+      OCR検出: 'Gtl' at y=938.5
+      OCR検出: 'Gtll' at y=1080.7
+  システム 1:
+  システム 2:
+
+ページ 6/10 を処理中...
+    OCRを実行中...
+      OCR検出: 'Gt' at y=190.1
+      OCR検出: 'Gtll' at y=332.3
+      OCR検出: 'Gtl' at y=918.0
+  システム 1:
+    除外: Gt
+  システム 2:
+
+ページ 7/10 を処理中...
+    OCRを実行中...
+      OCR検出: 'Vo.' at y=804.2
+      OCR検出: 'Gtl' at y=922.0
+      OCR検出: 'Gtll' at y=1064.2
+  システム 1:
+    vocal: Vo.
+    検出された小節数: 8 (目標: 8)
+
+ページ 8/10 を処理中...
+    OCRを実行中...
+      OCR検出: 'Gtll' at y=331.9
+      OCR検出: 'Gtl' at y=917.6
+      OCR検出: 'Gtll' at y=1059.8
+  システム 1:
+  システム 2:
+
+ページ 9/10 を処理中...
+    OCRを実行中...
+      OCR検出: 'Gtl' at y=222.1
+      OCR検出: 'Gtl' at y=950.0
+  システム 1:
+  システム 2:
+
+ページ 10/10 を処理中...
+    OCRを実行中...
+      OCR検出: 'Gtll' at y=367.9
+      OCR検出: 'Gtl' at y=954.0
+      OCR検出: 'Gtll' at y=1096.2
+  システム 1:
+  システム 2:
+
+抽出完了: uploads/91d2aa0f-27e8-4822-b075-945cc3f4a833/pdf_measure_based_8m.pdf
+
+ページ 1/19 を処理中...
+  システム 1:
+    vocal: Vocal
+    keyboard: Keyboard I
+    除外: Bass
+    除外: Drums
+    検出された小節数: 8 (目標: 8)
+
+ページ 2/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 3/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 4/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    除外: (Synth. Bass)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 5/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 6/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 7/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 8/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 9/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: (Synth.)
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 10/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 11/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 12/19 を処理中...
+  システム 1:
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    vocal: Vo.
+    除外: Gt. I
+    除外: Gt. II
+    keyboard: Keyb. I
+    除外: Ba.
+    除外: Dr.
+    検出された小節数: 8 (目標: 8)
+
+ページ 13/19 を処理中...
+  システム 1:
+    keyboard: Keyboard II
+    keyboard: Keyboard III
+    keyboard: Keyboard IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    検出された小節数: 8 (目標: 8)
+
+ページ 14/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    検出された小節数: 8 (目標: 8)
+
+ページ 15/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: (Synth. Strings)
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    検出された小節数: 8 (目標: 8)
+
+ページ 16/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    検出された小節数: 8 (目標: 8)
+
+ページ 17/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: (Synth.)
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    検出された小節数: 8 (目標: 8)
+
+ページ 18/19 を処理中...
+  システム 1:
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    keyboard: Keyb.II
+    keyboard: Keyb.III
+    keyboard: Keyb.IV
+    検出された小節数: 8 (目標: 8)
+
+ページ 19/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.II' at y=69.1
+      OCR検出: 'Keyb.ll' at y=312.5
+      OCR検出: 'Keyb.II' at y=562.7
+      OCR検出: 'Keyblll' at y=619.9
+      OCR検出: 'Keyb.IV' at y=672.1
+  システム 1:
+    keyboard: Keyb.II
+    検出された小節数: 8 (目標: 8)
+  システム 2:
+    keyboard: Keyb.ll
+    検出された小節数: 8 (目標: 8)
+  システム 3:
+    keyboard: Keyb.II
+    keyboard: Keyblll
+    keyboard: Keyb.IV
+    検出された小節数: 8 (目標: 8)
+
+抽出完了: uploads/ef8d7fee-add0-4d45-b7a2-f4edf4bbfe2f/pdf_measure_based_8m.pdf
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753061634777', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753061663288', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753061798269', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753061931042', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753061980905', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753062018645', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753062073003', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+127.0.0.1 - - [21/Jul/2025 10:43:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 10:43:12] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Jul/2025 10:43:12] "GET /static/js/app.js HTTP/1.1" 304 -
+[2025-07-21 10:43:20,775] INFO in app: Uploading file: 群青.pdf -> pdf
+[2025-07-21 10:43:20,780] INFO in app: Saved file to: uploads/459cd1e2-585c-498f-81d6-ace93e1764b7/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 10:43:20] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-21 10:43:20,797] INFO in app: Analyzing file_id: 459cd1e2-585c-498f-81d6-ace93e1764b7, filepath: uploads/459cd1e2-585c-498f-81d6-ace93e1764b7/pdf.pdf
+127.0.0.1 - - [21/Jul/2025 10:43:20] "GET /api/analyze/459cd1e2-585c-498f-81d6-ace93e1764b7 HTTP/1.1" 200 -
+[2025-07-21 10:43:24,787] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 10:43:50] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 10:43:50] "GET /api/download/459cd1e2-585c-498f-81d6-ace93e1764b7_smart HTTP/1.1" 200 -
+[2025-07-21 10:44:16,024] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 10:44:17] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 10:44:17] "GET /api/download/459cd1e2-585c-498f-81d6-ace93e1764b7_smart HTTP/1.1" 200 -
+[2025-07-21 10:52:12,611] INFO in app: Uploading file: Mela！.pdf -> Mela.pdf
+[2025-07-21 10:52:12,617] INFO in app: Saved file to: uploads/ec6f5935-da9c-41e6-9f08-549b44c3c902/Mela.pdf
+127.0.0.1 - - [21/Jul/2025 10:52:12] "POST /api/upload HTTP/1.1" 200 -
+[2025-07-21 10:52:12,637] INFO in app: Analyzing file_id: ec6f5935-da9c-41e6-9f08-549b44c3c902, filepath: uploads/ec6f5935-da9c-41e6-9f08-549b44c3c902/Mela.pdf
+127.0.0.1 - - [21/Jul/2025 10:52:12] "GET /api/analyze/ec6f5935-da9c-41e6-9f08-549b44c3c902 HTTP/1.1" 200 -
+[2025-07-21 10:52:17,708] INFO in app: Smart extraction mode with parts: ['vocal', 'chord', 'keyboard']
+127.0.0.1 - - [21/Jul/2025 10:52:39] "POST /api/extract HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2025 10:52:39] "GET /api/download/ec6f5935-da9c-41e6-9f08-549b44c3c902_smart HTTP/1.1" 200 -
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753062916163', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+
+ページ 1/19 を処理中...
+    OCRを実行中...
+
+ページ 2/19 を処理中...
+    OCRを実行中...
+
+ページ 3/19 を処理中...
+    OCRを実行中...
+
+ページ 4/19 を処理中...
+    OCRを実行中...
+
+ページ 5/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Vo.' at y=88.9
+      OCR検出: 'Gt.' at y=200.9
+      OCR検出: 'Keyb.' at y=364.0
+      OCR検出: 'Keyb.lll' at y=423.0
+      OCR検出: 'Vo.' at y=824.0
+      OCR検出: 'Gt.' at y=936.0
+      OCR検出: 'Keyb.' at y=1104.1
+      OCR検出: 'Keyb.lll' at y=1159.2
+  システム 1:
+    vocal: Vo.
+    除外: Gt.
+    keyboard: Keyb.
+    keyboard: Keyb.lll
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+  システム 2:
+    vocal: Vo.
+    除外: Gt.
+    keyboard: Keyb.
+    keyboard: Keyb.lll
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+
+ページ 6/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Ba' at y=502.9
+      OCR検出: 'Dr.' at y=604.8
+      OCR検出: 'Vo.' at y=828.0
+      OCR検出: 'Gt.' at y=940.0
+      OCR検出: 'Keyb.ll' at y=1108.1
+      OCR検出: 'Ba' at y=1252.1
+      OCR検出: 'Dr' at y=1347.1
+  システム 1:
+    除外: Dr.
+    コード記号の検出を実行...
+  システム 2:
+    vocal: Vo.
+    除外: Gt.
+    keyboard: Keyb.ll
+    除外: Dr
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+
+ページ 7/19 を処理中...
+    OCRを実行中...
+
+ページ 8/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.!l' at y=343.4
+      OCR検出: 'Gt.' at y=918.7
+      OCR検出: 'Keyb.ll' at y=1078.2
+  システム 1:
+    keyboard: Keyb.!l
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+  システム 2:
+    除外: Gt.
+    keyboard: Keyb.ll
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+
+ページ 9/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.' at y=424.8
+      OCR検出: '(Piano' at y=992.5
+  システム 1:
+    keyboard: Keyb.
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+  システム 2:
+    keyboard: (Piano
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+
+ページ 10/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.' at y=349.6
+      OCR検出: 'Keyb.!' at y=1024.6
+      OCR検出: 'Keyb.!l' at y=1091.5
+  システム 1:
+    keyboard: Keyb.
+    コード記号の検出を実行...
+      検出された縦線: 5本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 5
+  システム 2:
+    keyboard: Keyb.!
+    keyboard: Keyb.!l
+    コード記号の検出を実行...
+      検出された縦線: 13本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 13
+
+ページ 11/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.!' at y=299.2
+  システム 1:
+    keyboard: Keyb.!
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+
+ページ 12/19 を処理中...
+    OCRを実行中...
+
+ページ 13/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyb.lll' at y=391.3
+  システム 1:
+    keyboard: Keyb.lll
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+
+ページ 14/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Gt.' at y=173.2
+      OCR検出: 'Keyb.ll' at y=1074.2
+  システム 1:
+    除外: Gt.
+    コード記号の検出を実行...
+  システム 2:
+    keyboard: Keyb.ll
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+
+ページ 15/19 を処理中...
+    OCRを実行中...
+
+ページ 16/19 を処理中...
+    OCRを実行中...
+
+ページ 17/19 を処理中...
+    OCRを実行中...
+
+ページ 18/19 を処理中...
+    OCRを実行中...
+
+ページ 19/19 を処理中...
+    OCRを実行中...
+
+抽出完了: uploads/459cd1e2-585c-498f-81d6-ace93e1764b7/pdf_measure_based_8m.pdf
+
+ページ 1/2 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyt' at y=417.6
+      OCR検出: 'Keyb.ll' at y=484.9
+      OCR検出: 'Keyb.l' at y=558.4
+      OCR検出: 'Keyb.lll' at y=625.0
+  システム 1:
+    keyboard: Keyt
+    keyboard: Keyb.ll
+    keyboard: Keyb.l
+    keyboard: Keyb.lll
+    コード記号の検出を実行...
+      検出された縦線: 3本
+    検出された小節数: 4 (目標: 4)
+    検出された縦線数: 3
+
+ページ 2/2 を処理中...
+    OCRを実行中...
+      OCR検出: 'Keyl' at y=140.8
+      OCR検出: 'Keyb.!' at y=244.4
+  システム 1:
+    keyboard: Keyl
+    keyboard: Keyb.!
+    コード記号の検出を実行...
+      検出された縦線: 3本
+    検出された小節数: 4 (目標: 4)
+    検出された縦線数: 3
+
+抽出完了: uploads/459cd1e2-585c-498f-81d6-ace93e1764b7/pdf_measure_based_8m_measure_based_4m.pdf
+
+ページ 1/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Piano' at y=893.9
+      OCR検出: 'Key.2' at y=1013.0
+      OCR検出: 'Drs.' at y=1392.5
+  システム 1:
+    keyboard: Piano
+    keyboard: Key.2
+    コード記号の検出を実行...
+      検出された縦線: 4本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 4
+  システム 2:
+    コード記号の検出を実行...
+
+ページ 2/19 を処理中...
+    OCRを実行中...
+
+ページ 3/19 を処理中...
+    OCRを実行中...
+
+ページ 4/19 を処理中...
+    OCRを実行中...
+
+ページ 5/19 を処理中...
+    OCRを実行中...
+
+ページ 6/19 を処理中...
+    OCRを実行中...
+
+ページ 7/19 を処理中...
+    OCRを実行中...
+
+ページ 8/19 を処理中...
+    OCRを実行中...
+
+ページ 9/19 を処理中...
+    OCRを実行中...
+
+ページ 10/19 を処理中...
+    OCRを実行中...
+      OCR検出: '<Synth.3' at y=1071.4
+  システム 1:
+    keyboard: <Synth.3
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+
+ページ 11/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Vora' at y=1127.9
+  システム 1:
+    vocal: Vora
+    コード記号の検出を実行...
+      検出された縦線: 6本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 6
+
+ページ 12/19 を処理中...
+    OCRを実行中...
+
+ページ 13/19 を処理中...
+    OCRを実行中...
+
+ページ 14/19 を処理中...
+    OCRを実行中...
+
+ページ 15/19 を処理中...
+    OCRを実行中...
+      OCR検出: 'Key.2' at y=1060.9
+  システム 1:
+    keyboard: Key.2
+    コード記号の検出を実行...
+      検出された縦線: 2本
+    検出された小節数: 8 (目標: 8)
+    検出された縦線数: 2
+
+ページ 16/19 を処理中...
+    OCRを実行中...
+
+ページ 17/19 を処理中...
+    OCRを実行中...
+
+ページ 18/19 を処理中...
+    OCRを実行中...
+
+ページ 19/19 を処理中...
+    OCRを実行中...
+
+抽出完了: uploads/ec6f5935-da9c-41e6-9f08-549b44c3c902/Mela_measure_based_8m.pdf
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753062991880', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753063113288', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+ * Debugger is active!
+ * Debugger PIN: 414-316-167
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py.tmp.57298.1753063136817', reloading
+ * Detected change in '/Users/Yodai/band_part_key_app/core/measure_based_extractor.py', reloading
+ * Restarting with watchdog (fsevents)
+Traceback (most recent call last):
+  File "/Users/Yodai/band_part_key_app/app.py", line 11, in <module>
+    from core.measure_based_extractor import MeasureBasedExtractor
+  File "/Users/Yodai/band_part_key_app/core/measure_based_extractor.py", line 456
+    part_height = self.part_height_4measures if self.measures_per_line == 4 else self.part_height_8measures
+    ^
+IndentationError: expected an indented block after 'for' statement on line 454
