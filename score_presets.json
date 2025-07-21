@@ -1,0 +1,103 @@
+{
+  "presets": {
+    "yamaha_band_score": {
+      "name": "ヤマハ バンドスコア",
+      "description": "一般的なヤマハ出版のバンドスコア形式",
+      "instruments": [
+        {"type": "vocal", "label": "Vocal", "y_ratio": 0.10, "height_ratio": 0.08},
+        {"type": "guitar1", "label": "Guitar 1", "y_ratio": 0.20, "height_ratio": 0.08},
+        {"type": "guitar2", "label": "Guitar 2", "y_ratio": 0.30, "height_ratio": 0.08},
+        {"type": "bass", "label": "Bass", "y_ratio": 0.40, "height_ratio": 0.08},
+        {"type": "keyboard", "label": "Keyboard", "y_ratio": 0.50, "height_ratio": 0.10},
+        {"type": "drums", "label": "Drums", "y_ratio": 0.62, "height_ratio": 0.10}
+      ],
+      "measures_per_page": 8,
+      "systems_per_page": 2,
+      "margin_top": 0.05,
+      "margin_bottom": 0.05
+    },
+    "shinko_band_score": {
+      "name": "シンコー バンドスコア",
+      "description": "シンコーミュージック出版のバンドスコア形式",
+      "instruments": [
+        {"type": "vocal", "label": "Vo.", "y_ratio": 0.12, "height_ratio": 0.07},
+        {"type": "chorus", "label": "Cho.", "y_ratio": 0.19, "height_ratio": 0.05},
+        {"type": "guitar", "label": "Gt.", "y_ratio": 0.26, "height_ratio": 0.08},
+        {"type": "keyboard", "label": "Key.", "y_ratio": 0.36, "height_ratio": 0.10},
+        {"type": "bass", "label": "Ba.", "y_ratio": 0.48, "height_ratio": 0.08},
+        {"type": "drums", "label": "Dr.", "y_ratio": 0.58, "height_ratio": 0.12}
+      ],
+      "measures_per_page": 8,
+      "systems_per_page": 2,
+      "margin_top": 0.08,
+      "margin_bottom": 0.08
+    },
+    "piano_vocal": {
+      "name": "ピアノ・ボーカル譜",
+      "description": "ボーカルとピアノ（右手・左手）の3段譜",
+      "instruments": [
+        {"type": "vocal", "label": "Vocal", "y_ratio": 0.15, "height_ratio": 0.15},
+        {"type": "piano_r", "label": "Piano R.H.", "y_ratio": 0.35, "height_ratio": 0.15},
+        {"type": "piano_l", "label": "Piano L.H.", "y_ratio": 0.50, "height_ratio": 0.15}
+      ],
+      "measures_per_page": 4,
+      "systems_per_page": 2,
+      "margin_top": 0.10,
+      "margin_bottom": 0.10
+    },
+    "simple_chord": {
+      "name": "コード譜（歌詞付き）",
+      "description": "歌詞とコードのみのシンプルな譜面",
+      "instruments": [
+        {"type": "chord", "label": "Chord", "y_ratio": 0.10, "height_ratio": 0.05},
+        {"type": "lyrics", "label": "Lyrics", "y_ratio": 0.15, "height_ratio": 0.70}
+      ],
+      "measures_per_page": 8,
+      "systems_per_page": 1,
+      "margin_top": 0.10,
+      "margin_bottom": 0.10
+    },
+    "custom_3parts": {
+      "name": "カスタム3パート",
+      "description": "ボーカル・コード・キーボードの3パート",
+      "instruments": [
+        {"type": "vocal", "label": "Vocal", "y_ratio": 0.20, "height_ratio": 0.15},
+        {"type": "chord", "label": "Chord", "y_ratio": 0.40, "height_ratio": 0.08},
+        {"type": "keyboard", "label": "Keyboard", "y_ratio": 0.55, "height_ratio": 0.20}
+      ],
+      "measures_per_page": 4,
+      "systems_per_page": 2,
+      "margin_top": 0.10,
+      "margin_bottom": 0.10
+    }
+  },
+  "publishers": {
+    "yamaha": {
+      "name": "ヤマハミュージックメディア",
+      "common_layouts": ["yamaha_band_score"],
+      "characteristics": {
+        "font_size": "medium",
+        "staff_spacing": "regular",
+        "measure_numbers": true
+      }
+    },
+    "shinko": {
+      "name": "シンコーミュージック",
+      "common_layouts": ["shinko_band_score"],
+      "characteristics": {
+        "font_size": "small",
+        "staff_spacing": "compact",
+        "measure_numbers": true
+      }
+    },
+    "doremi": {
+      "name": "ドレミ楽譜出版社",
+      "common_layouts": ["piano_vocal", "simple_chord"],
+      "characteristics": {
+        "font_size": "large",
+        "staff_spacing": "wide",
+        "measure_numbers": false
+      }
+    }
+  }
+}

@@ -83,6 +83,21 @@
                         </div>
                         
                         
+                        <!-- 楽譜タイプ選択 -->
+                        <div class="score-type-selection mt-4 p-3 bg-info bg-opacity-10 rounded">
+                            <h5>楽譜タイプ（オプション）</h5>
+                            <div class="mb-3">
+                                <select class="form-select" id="score-preset">
+                                    <option value="">自動検出</option>
+                                    <option value="yamaha_band_score">ヤマハ バンドスコア</option>
+                                    <option value="shinko_band_score">シンコー バンドスコア</option>
+                                    <option value="piano_vocal">ピアノ・ボーカル譜</option>
+                                    <option value="custom_3parts">カスタム3パート（Vo/Cho/Key）</option>
+                                </select>
+                                <small class="text-muted">楽譜の出版社やタイプを選択すると、より正確に抽出できます</small>
+                            </div>
+                        </div>
+                        
                         <!-- 抽出モード選択 -->
                         <div class="extraction-mode mt-4 p-3 bg-warning bg-opacity-10 rounded">
                             <h5>抽出モード</h5>
