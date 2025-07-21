@@ -173,6 +173,12 @@ async function extractParts() {
     // 歌詞表示オプションを取得
     const showLyrics = document.getElementById('showLyricsCheck').checked;
     
+    // プリセットを取得
+    const scorePreset = document.getElementById('score-preset').value;
+    
+    // 統合ボーカルモードかチェック
+    const integratedVocal = document.getElementById('integratedVocalCheck')?.checked || false;
+    
     // スマートモードの場合、選択されたパートを取得
     let selectedParts = ['vocal', 'chord', 'keyboard']; // デフォルト
     if (extractMode === 'smart') {
@@ -201,7 +207,9 @@ async function extractParts() {
                 mode: extractMode,
                 selected_parts: selectedParts,
                 measures_per_line: measuresPerLine,
-                show_lyrics: showLyrics
+                show_lyrics: showLyrics,
+                score_preset: scorePreset,
+                integrated_vocal: integratedVocal
             })
         });
         

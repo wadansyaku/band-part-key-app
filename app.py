@@ -15,6 +15,8 @@ else:
 from core.pdf_processor import PDFProcessor
 from core.precise_extractor import PreciseExtractor
 from core.measure_based_extractor import MeasureBasedExtractor
+from core.preset_extractor import PresetExtractor
+from core.integrated_vocal_extractor import IntegratedVocalExtractor
 from utils.file_handler import FileHandler
 
 app = Flask(__name__)
@@ -27,6 +29,8 @@ CORS(app, origins=app.config['CORS_ORIGINS'])
 pdf_processor = PDFProcessor()
 precise_extractor = PreciseExtractor()
 measure_based_extractor = MeasureBasedExtractor()
+preset_extractor = PresetExtractor()
+integrated_vocal_extractor = IntegratedVocalExtractor()
 file_handler = FileHandler(app.config)
 
 @app.route('/')
@@ -106,6 +110,8 @@ def extract_parts():
     selected_parts = data.get('selected_parts', ['vocal', 'chord', 'keyboard'])  # スマートモード用
     measures_per_line = data.get('measures_per_line', 8)  # 4 or 8
     show_lyrics = data.get('show_lyrics', False)  # 歌詞表示オプション
+    score_preset = data.get('score_preset', '')  # プリセット選択
+    integrated_vocal = data.get('integrated_vocal', False)  # 統合ボーカル抽出
     
     if not file_id:
         return jsonify({'error': 'ファイルIDが指定されていません'}), 400
@@ -115,7 +121,58 @@ def extract_parts():
         if not filepath:
             return jsonify({'error': 'ファイルが見つかりません'}), 404
         
-        if extract_mode == 'smart':
+        # プリセットモード
+        if score_preset:
+            app.logger.info(f"Preset extraction mode: {score_preset}")
+            
+            output_path = preset_extractor.extract_with_preset(
+                filepath,
+                score_preset,
+                selected_parts,
+                measures_per_line,
+                show_lyrics
+            )
+            
+            if output_path and os.path.exists(output_path):
+                temp_output_path = os.path.join(file_handler.temp_folder, f"{file_id}_preset.pdf")
+                import shutil
+                shutil.copy2(output_path, temp_output_path)
+                
+                return jsonify({
+                    'id': file_id,
+                    'output_id': f"{file_id}_preset",
+                    'status': 'completed',
+                    'mode': 'preset',
+                    'preset': score_preset,
+                    'parts_extracted': selected_parts
+                }), 200
+        
+        # 統合ボーカルモード
+        elif integrated_vocal and 'vocal' in selected_parts:
+            app.logger.info("Integrated vocal extraction mode")
+            
+            output_path = integrated_vocal_extractor.extract_vocal_parts(
+                filepath,
+                measures_per_line,
+                include_chords='chord' in selected_parts,
+                include_lyrics=show_lyrics,
+                pages_to_extract=selected_pages if selected_pages else None
+            )
+            
+            if output_path and os.path.exists(output_path):
+                temp_output_path = os.path.join(file_handler.temp_folder, f"{file_id}_vocal.pdf")
+                import shutil
+                shutil.copy2(output_path, temp_output_path)
+                
+                return jsonify({
+                    'id': file_id,
+                    'output_id': f"{file_id}_vocal",
+                    'status': 'completed',
+                    'mode': 'integrated_vocal',
+                    'parts_extracted': selected_parts
+                }), 200
+        
+        elif extract_mode == 'smart':
             # スマート抽出モード（ベース除外、小節揃え）
             app.logger.info(f"Smart extraction mode with parts: {selected_parts}")
             
