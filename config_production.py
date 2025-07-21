@@ -31,6 +31,7 @@ class ProductionConfig:
     # ファイルクリーンアップ設定
     CLEANUP_INTERVAL = 3600  # 1時間
     FILE_RETENTION_HOURS = 1  # 1時間後に削除
+    FILE_RETENTION_MINUTES = 60  # 60分後に削除
     
     @staticmethod
     def init_app(app):

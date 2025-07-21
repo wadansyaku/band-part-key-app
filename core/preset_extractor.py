@@ -7,9 +7,28 @@ class PresetExtractor:
     
     def __init__(self):
         # プリセットを読み込み
-        preset_file = os.path.join(os.path.dirname(__file__), '..', 'score_presets.json')
-        with open(preset_file, 'r', encoding='utf-8') as f:
-            self.presets_data = json.load(f)
+        try:
+            preset_file = os.path.join(os.path.dirname(__file__), '..', 'score_presets.json')
+            with open(preset_file, 'r', encoding='utf-8') as f:
+                self.presets_data = json.load(f)
+        except Exception as e:
+            print(f"Warning: Could not load presets: {e}")
+            # デフォルトプリセットを使用
+            self.presets_data = {
+                'presets': {
+                    'default': {
+                        'name': 'Default Layout',
+                        'description': 'Standard layout',
+                        'instruments': [
+                            {'type': 'vocal', 'label': 'Vocal', 'y_ratio': 0.15, 'height_ratio': 0.15},
+                            {'type': 'keyboard', 'label': 'Keyboard', 'y_ratio': 0.45, 'height_ratio': 0.20}
+                        ],
+                        'measures_per_page': 8,
+                        'systems_per_page': 2
+                    }
+                },
+                'publishers': {}
+            }
         
         self.presets = self.presets_data['presets']
         self.publishers = self.presets_data['publishers']

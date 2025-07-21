@@ -8,10 +8,10 @@ class FileHandler:
     
     def __init__(self, config):
         self.config = config
-        self.upload_folder = config['UPLOAD_FOLDER']
-        self.temp_folder = config['TEMP_FOLDER']
-        self.allowed_extensions = config['ALLOWED_EXTENSIONS']
-        self.retention_minutes = config['FILE_RETENTION_MINUTES']
+        self.upload_folder = config.get('UPLOAD_FOLDER', 'uploads')
+        self.temp_folder = config.get('TEMP_FOLDER', 'temp')
+        self.allowed_extensions = config.get('ALLOWED_EXTENSIONS', {'pdf'})
+        self.retention_minutes = config.get('FILE_RETENTION_MINUTES', 60)
     
     def allowed_file(self, filename):
         """許可されたファイル拡張子かチェック"""
