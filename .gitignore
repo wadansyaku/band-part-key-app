@@ -34,8 +34,29 @@ uploads/
 temp/
 sessions/
 logs/
+
+# 著作権保護 - 楽譜データを除外
 *.pdf
-!static/*.pdf
+*.PDF
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.midi
+*.mid
+*.mp3
+*.wav
+*.ogg
+*.flac
+
+# テストデータも除外
+test_data/
+sample_scores/
+examples/
+Downloads/
+Desktop/
 
 # Testing
 .pytest_cache/
