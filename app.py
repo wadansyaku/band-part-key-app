@@ -15,9 +15,22 @@ else:
 from core.pdf_processor import PDFProcessor
 from core.precise_extractor import PreciseExtractor
 from core.measure_based_extractor import MeasureBasedExtractor
-from core.preset_extractor import PresetExtractor
-from core.integrated_vocal_extractor import IntegratedVocalExtractor
 from utils.file_handler import FileHandler
+
+# オプショナルなインポート（エラーを防ぐ）
+try:
+    from core.preset_extractor import PresetExtractor
+    preset_extractor = PresetExtractor()
+except Exception as e:
+    print(f"Warning: PresetExtractor could not be loaded: {e}")
+    preset_extractor = None
+
+try:
+    from core.integrated_vocal_extractor import IntegratedVocalExtractor
+    integrated_vocal_extractor = IntegratedVocalExtractor()
+except Exception as e:
+    print(f"Warning: IntegratedVocalExtractor could not be loaded: {e}")
+    integrated_vocal_extractor = None
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -29,8 +42,6 @@ CORS(app, origins=app.config['CORS_ORIGINS'])
 pdf_processor = PDFProcessor()
 precise_extractor = PreciseExtractor()
 measure_based_extractor = MeasureBasedExtractor()
-preset_extractor = PresetExtractor()
-integrated_vocal_extractor = IntegratedVocalExtractor()
 file_handler = FileHandler(app.config)
 
 @app.route('/')
@@ -122,7 +133,7 @@ def extract_parts():
             return jsonify({'error': 'ファイルが見つかりません'}), 404
         
         # プリセットモード
-        if score_preset:
+        if score_preset and preset_extractor:
             app.logger.info(f"Preset extraction mode: {score_preset}")
             
             output_path = preset_extractor.extract_with_preset(
@@ -148,7 +159,7 @@ def extract_parts():
                 }), 200
         
         # 統合ボーカルモード
-        elif integrated_vocal and 'vocal' in selected_parts:
+        elif integrated_vocal and 'vocal' in selected_parts and integrated_vocal_extractor:
             app.logger.info("Integrated vocal extraction mode")
             
             output_path = integrated_vocal_extractor.extract_vocal_parts(

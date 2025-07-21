@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
     libxext6 \
     libxrender-dev \
     libgomp1 \
+    libmagic1 \
+    poppler-utils \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
@@ -31,6 +33,9 @@ RUN mkdir -p uploads temp
 
 # ポート番号を環境変数として設定
 ENV PORT=8080
+
+# 起動前チェック
+RUN python startup_check.py || echo "Warning: Some dependencies may be missing"
 
 # アプリケーションを起動
 CMD gunicorn --bind 0.0.0.0:$PORT --workers 2 --timeout 120 app:app
