@@ -32,6 +32,41 @@ except Exception as e:
     print(f"Warning: IntegratedVocalExtractor could not be loaded: {e}")
     integrated_vocal_extractor = None
 
+try:
+    from core.image_based_extractor import ImageBasedExtractor
+    image_extractor = ImageBasedExtractor()
+except Exception as e:
+    print(f"Warning: ImageBasedExtractor could not be loaded: {e}")
+    image_extractor = None
+
+try:
+    from core.pdf_type_detector import PDFTypeDetector
+    pdf_type_detector = PDFTypeDetector()
+except Exception as e:
+    print(f"Warning: PDFTypeDetector could not be loaded: {e}")
+    pdf_type_detector = None
+
+try:
+    from core.fast_image_extractor import FastImageExtractor
+    fast_extractor = FastImageExtractor()
+except Exception as e:
+    print(f"Warning: FastImageExtractor could not be loaded: {e}")
+    fast_extractor = None
+
+try:
+    from core.practical_extractor import PracticalExtractor
+    practical_extractor = PracticalExtractor()
+except Exception as e:
+    print(f"Warning: PracticalExtractor could not be loaded: {e}")
+    practical_extractor = None
+
+try:
+    from core.final_smart_extractor import FinalSmartExtractor
+    final_smart_extractor = FinalSmartExtractor()
+except Exception as e:
+    print(f"Warning: FinalSmartExtractor could not be loaded: {e}")
+    final_smart_extractor = None
+
 app = Flask(__name__)
 app.config.from_object(Config)
 Config.init_app(app)
@@ -99,11 +134,26 @@ def analyze_score(file_id):
         # 簡易解析（ページ数のみ）
         page_count = pdf_processor.get_page_count(filepath)
         
+        # PDFタイプの自動検出
+        pdf_type_info = None
+        extraction_recommendation = None
+        
+        if pdf_type_detector:
+            try:
+                analysis_result = pdf_type_detector.analyze_for_extraction(filepath)
+                pdf_type_info = analysis_result['pdf_type']
+                extraction_recommendation = analysis_result['extraction_config']
+                app.logger.info(f"PDF type detected: {pdf_type_info['type']}")
+            except Exception as e:
+                app.logger.warning(f"PDF type detection failed: {e}")
+        
         return jsonify({
             'id': file_id,
             'analysis': {
                 'page_count': page_count,
-                'has_content': True
+                'has_content': True,
+                'pdf_type': pdf_type_info,
+                'extraction_recommendation': extraction_recommendation
             }
         }), 200
         
@@ -119,10 +169,12 @@ def extract_parts():
     selected_pages = data.get('selected_pages', [])
     extract_mode = data.get('mode', 'full_page')  # 'full_page', 'part_only', or 'smart'
     selected_parts = data.get('selected_parts', ['vocal', 'chord', 'keyboard'])  # スマートモード用
-    measures_per_line = data.get('measures_per_line', 8)  # 4 or 8
+    measures_per_line = data.get('measures_per_line', 4)  # デフォルトを4に変更
     show_lyrics = data.get('show_lyrics', False)  # 歌詞表示オプション
     score_preset = data.get('score_preset', '')  # プリセット選択
     integrated_vocal = data.get('integrated_vocal', False)  # 統合ボーカル抽出
+    use_image_based = data.get('use_image_based', False)  # 画像ベース抽出
+    use_final_smart = data.get('use_final_smart', True)  # 最終スマート抽出（デフォルトTrue）
     
     if not file_id:
         return jsonify({'error': 'ファイルIDが指定されていません'}), 400
@@ -131,6 +183,59 @@ def extract_parts():
         filepath = file_handler.get_upload_path(file_id)
         if not filepath:
             return jsonify({'error': 'ファイルが見つかりません'}), 404
+        
+        # 最終スマート抽出モード（デフォルト）
+        if use_final_smart and final_smart_extractor:
+            app.logger.info("Final smart extraction mode (auto-detect, 4 measures, integrated vocal)")
+            
+            output_path = final_smart_extractor.extract_smart_final(filepath)
+            
+            if output_path and os.path.exists(output_path):
+                temp_output_path = os.path.join(file_handler.temp_folder, f"{file_id}_final_smart.pdf")
+                import shutil
+                shutil.copy2(output_path, temp_output_path)
+                
+                return jsonify({
+                    'id': file_id,
+                    'output_id': f"{file_id}_final_smart",
+                    'status': 'completed',
+                    'mode': 'final_smart',
+                    'parts_extracted': ['vocal_integrated', 'keyboard']
+                }), 200
+        
+        # 画像ベース抽出モード（実用的抽出器を使用）
+        elif use_image_based and practical_extractor:
+            app.logger.info("Practical extraction mode")
+            
+            # selected_partsの形式を変換
+            practical_parts = []
+            for part in selected_parts:
+                if part.lower() == 'vocal':
+                    practical_parts.append('Vocal')
+                elif part.lower() == 'keyboard':
+                    practical_parts.append('Keyboard')
+                elif part.lower() == 'chord':
+                    practical_parts.append('Chord')
+            
+            output_path = practical_extractor.extract_practical(
+                filepath,
+                measures_per_line,
+                practical_parts,
+                show_lyrics
+            )
+            
+            if output_path and os.path.exists(output_path):
+                temp_output_path = os.path.join(file_handler.temp_folder, f"{file_id}_image.pdf")
+                import shutil
+                shutil.copy2(output_path, temp_output_path)
+                
+                return jsonify({
+                    'id': file_id,
+                    'output_id': f"{file_id}_image",
+                    'status': 'completed',
+                    'mode': 'image_based',
+                    'parts_extracted': selected_parts
+                }), 200
         
         # プリセットモード
         if score_preset and preset_extractor:

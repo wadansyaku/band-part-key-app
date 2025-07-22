@@ -122,6 +122,80 @@ function displayAnalysisResults(analysis) {
         html += '</div>';
     }
     
+    // PDFタイプの検出結果を表示
+    if (analysis.pdf_type) {
+        html += '<div class="mb-4 p-3 bg-light rounded">';
+        html += '<h5><i class="fas fa-info-circle"></i> PDFタイプ自動検出</h5>';
+        
+        const pdfType = analysis.pdf_type;
+        let typeLabel = '';
+        let typeClass = '';
+        
+        switch(pdfType.type) {
+            case 'image_based':
+                typeLabel = '画像ベースPDF';
+                typeClass = 'text-warning';
+                break;
+            case 'text_based':
+                typeLabel = 'テキストベースPDF';
+                typeClass = 'text-success';
+                break;
+            case 'hybrid':
+                typeLabel = 'ハイブリッドPDF';
+                typeClass = 'text-info';
+                break;
+            default:
+                typeLabel = '不明なタイプ';
+                typeClass = 'text-secondary';
+        }
+        
+        html += `<p class="${typeClass}"><strong>タイプ: ${typeLabel}</strong> (信頼度: ${Math.round(pdfType.confidence * 100)}%)</p>`;
+        
+        // 詳細情報
+        if (pdfType.details) {
+            html += '<small class="text-muted">';
+            html += `テキストブロック数: ${pdfType.details.text_block_count}、`;
+            html += `画像数: ${pdfType.details.image_count}`;
+            html += '</small>';
+        }
+        
+        // 推奨事項
+        if (pdfType.details && pdfType.details.recommendations) {
+            html += '<div class="mt-2">';
+            html += '<strong>推奨:</strong>';
+            html += '<ul class="mb-0">';
+            pdfType.details.recommendations.forEach(rec => {
+                html += `<li><small>${rec}</small></li>`;
+            });
+            html += '</ul>';
+            html += '</div>';
+        }
+        
+        html += '</div>';
+    }
+    
+    // 抽出方法の推奨を表示
+    if (analysis.extraction_recommendation) {
+        const rec = analysis.extraction_recommendation;
+        
+        // 推奨される抽出方法を自動選択
+        if (rec.recommended_method === 'image_based') {
+            // 画像ベース抽出を推奨
+            document.getElementById('use-image-based-check')?.click();
+        } else if (rec.recommended_method === 'measure_based' || rec.recommended_method === 'smart') {
+            // スマート抽出を推奨
+            document.getElementById('smartMode')?.click();
+        }
+        
+        // OCRが必要な場合は警告を表示
+        if (rec.use_ocr) {
+            html += '<div class="alert alert-warning">';
+            html += '<i class="fas fa-exclamation-triangle"></i> ';
+            html += 'このPDFは画像ベースのため、OCR処理が必要です。処理に時間がかかる場合があります。';
+            html += '</div>';
+        }
+    }
+    
     // 抽出オプションを表示
     html += '<div class="extraction-options">';
     html += '<h4>抽出設定</h4>';
@@ -164,36 +238,7 @@ async function extractParts() {
         return;
     }
     
-    // 抽出モードを取得
-    const extractMode = document.querySelector('input[name="extractMode"]:checked').value;
-    
-    // 小節数を取得
-    const measuresPerLine = parseInt(document.querySelector('input[name="measuresPerLine"]:checked').value);
-    
-    // 歌詞表示オプションを取得
-    const showLyrics = document.getElementById('showLyricsCheck').checked;
-    
-    // プリセットを取得
-    const scorePreset = document.getElementById('score-preset').value;
-    
-    // 統合ボーカルモードかチェック
-    const integratedVocal = document.getElementById('integratedVocalCheck')?.checked || false;
-    
-    // スマートモードの場合、選択されたパートを取得
-    let selectedParts = ['vocal', 'chord', 'keyboard']; // デフォルト
-    if (extractMode === 'smart') {
-        selectedParts = [];
-        document.querySelectorAll('.part-checkbox:checked').forEach(checkbox => {
-            selectedParts.push(checkbox.value);
-        });
-        
-        if (selectedParts.length === 0) {
-            showError('抽出するパートを選択してください');
-            return;
-        }
-    }
-    
-    showLoading('キーボードパートを抽出中...');
+    showLoading('楽譜を抽出中...');
     
     try {
         const response = await fetch('/api/extract', {
@@ -204,12 +249,14 @@ async function extractParts() {
             body: JSON.stringify({
                 file_id: currentFileId,
                 selected_pages: Array.from(selectedPages).sort((a, b) => a - b),
-                mode: extractMode,
-                selected_parts: selectedParts,
-                measures_per_line: measuresPerLine,
-                show_lyrics: showLyrics,
-                score_preset: scorePreset,
-                integrated_vocal: integratedVocal
+                mode: 'smart',
+                selected_parts: ['vocal', 'keyboard'],
+                measures_per_line: 4,
+                show_lyrics: true,
+                score_preset: '',
+                integrated_vocal: true,
+                use_image_based: false,
+                use_final_smart: true
             })
         });
         

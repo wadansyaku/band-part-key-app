@@ -51,6 +51,16 @@ logs/
 *.ogg
 *.flac
 
+# アウトプットディレクトリ（著作権保護）
+outputs/
+!outputs/.gitkeep
+!outputs/README.md
+
+# アーカイブディレクトリ
+archive/
+!archive/.gitignore
+!archive/README.md
+
 # テストデータも除外
 test_data/
 sample_scores/

@@ -85,16 +85,12 @@
                         
                         <!-- 楽譜タイプ選択 -->
                         <div class="score-type-selection mt-4 p-3 bg-info bg-opacity-10 rounded">
-                            <h5>楽譜タイプ（オプション）</h5>
+                            <h5>楽譜タイプ</h5>
                             <div class="mb-3">
-                                <select class="form-select" id="score-preset">
-                                    <option value="">自動検出</option>
-                                    <option value="yamaha_band_score">ヤマハ バンドスコア</option>
-                                    <option value="shinko_band_score">シンコー バンドスコア</option>
-                                    <option value="piano_vocal">ピアノ・ボーカル譜</option>
-                                    <option value="custom_3parts">カスタム3パート（Vo/Cho/Key）</option>
+                                <select class="form-select" id="score-preset" disabled>
+                                    <option value="" selected>自動検出のみ</option>
                                 </select>
-                                <small class="text-muted">楽譜の出版社やタイプを選択すると、より正確に抽出できます</small>
+                                <small class="text-muted">楽譜タイプは自動で検出されます</small>
                             </div>
                         </div>
                         
@@ -103,93 +99,41 @@
                             <h5>抽出モード</h5>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="extractMode" 
-                                       id="smartMode" value="smart" checked>
+                                       id="smartMode" value="smart" checked disabled>
                                 <label class="form-check-label" for="smartMode">
-                                    <strong>スマート抽出（推奨）</strong>
+                                    <strong>スマート抽出のみ</strong>
                                     <small class="text-muted d-block">
-                                        選択したパートを小節を揃えて抽出します
-                                    </small>
-                                </label>
-                            </div>
-                            <div class="form-check mt-2">
-                                <input class="form-check-input" type="radio" name="extractMode" 
-                                       id="partOnlyMode" value="part_only">
-                                <label class="form-check-label" for="partOnlyMode">
-                                    <strong>キーボードパートのみ抽出</strong>
-                                    <small class="text-muted d-block">
-                                        ページ内のキーボード/ピアノの段だけを切り出します
-                                    </small>
-                                </label>
-                            </div>
-                            <div class="form-check mt-2">
-                                <input class="form-check-input" type="radio" name="extractMode" 
-                                       id="fullPageMode" value="full_page">
-                                <label class="form-check-label" for="fullPageMode">
-                                    <strong>ページ全体を抽出</strong>
-                                    <small class="text-muted d-block">
-                                        選択したページ全体を抽出します（全楽器含む）
+                                        コード・メロディ・歌詞を一体化したボーカルパートとキーボードパートを抽出
                                     </small>
                                 </label>
                             </div>
                         </div>
                         
                         <!-- パート選択（スマートモード用） -->
-                        <div id="smart-part-selection" class="mt-3 p-3 bg-info bg-opacity-10 rounded">
-                            <h6>抽出するパートを選択:</h6>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input part-checkbox" type="checkbox" 
-                                       id="vocalCheck" value="vocal" checked>
-                                <label class="form-check-label" for="vocalCheck">
-                                    ボーカル
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input part-checkbox" type="checkbox" 
-                                       id="chordCheck" value="chord" checked>
-                                <label class="form-check-label" for="chordCheck">
-                                    コード
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input part-checkbox" type="checkbox" 
-                                       id="keyboardCheck" value="keyboard" checked>
-                                <label class="form-check-label" for="keyboardCheck">
-                                    キーボード
-                                </label>
-                            </div>
+                        <div id="smart-part-selection" class="mt-3 p-3 bg-info bg-opacity-10 rounded" style="display: none;">
+                            <h6>抽出されるパート:</h6>
+                            <p class="mb-0 text-muted">
+                                • ボーカル（コード・メロディ・歌詞一体化）<br>
+                                • キーボード
+                            </p>
                         </div>
                         
                         <!-- 小節数設定 -->
                         <div class="mt-3 p-3 bg-success bg-opacity-10 rounded">
                             <h6>1行あたりの小節数:</h6>
                             <div class="btn-group" role="group" aria-label="小節数選択">
-                                <input type="radio" class="btn-check" name="measuresPerLine" id="measures4" value="4" autocomplete="off">
-                                <label class="btn btn-outline-success" for="measures4">4小節</label>
-                                
-                                <input type="radio" class="btn-check" name="measuresPerLine" id="measures8" value="8" autocomplete="off" checked>
-                                <label class="btn btn-outline-success" for="measures8">8小節</label>
+                                <input type="radio" class="btn-check" name="measuresPerLine" id="measures4" value="4" autocomplete="off" checked disabled>
+                                <label class="btn btn-outline-success" for="measures4">4小節（固定）</label>
                             </div>
                             <small class="text-muted d-block mt-2">
-                                4小節：より大きく表示、詳細な譜面確認に適しています<br>
-                                8小節：コンパクトに表示、全体を俯瞰しやすい
+                                4小節で見やすく表示されます
                             </small>
                         </div>
                         
                         <!-- 追加オプション -->
-                        <div class="mt-3 p-3 bg-secondary bg-opacity-10 rounded">
+                        <div class="mt-3 p-3 bg-secondary bg-opacity-10 rounded" style="display: none;">
                             <h6>追加オプション:</h6>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="showLyricsCheck" value="lyrics">
-                                <label class="form-check-label" for="showLyricsCheck">
-                                    ボーカルパートに歌詞を表示
-                                    <small class="text-muted d-block">ボーカルパートを選択した場合のみ有効</small>
-                                </label>
-                            </div>
-                            <div class="form-check mt-2">
-                                <input class="form-check-input" type="checkbox" id="integratedVocalCheck">
-                                <label class="form-check-label" for="integratedVocalCheck">
-                                    統合ボーカル抽出（コード・メロディ・歌詞を一体化）
-                                    <small class="text-muted d-block">ボーカルパートをより正確に抽出</small>
+                            <p class="mb-0 text-muted">なし（自動で最適な設定が適用されます）</p>
                                 </label>
                             </div>
                         </div>

@@ -6,7 +6,7 @@ class Config:
     
     # 基本設定
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
-    DEBUG = os.environ.get('FLASK_DEBUG', True)
+    DEBUG = os.environ.get('FLASK_DEBUG', 'True').lower() == 'true'
     
     # ファイルアップロード設定
     UPLOAD_FOLDER = 'uploads'
