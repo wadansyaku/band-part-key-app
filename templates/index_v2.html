@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandScore AI - スマート楽譜抽出</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --dark-bg: #1f2937;
+            --card-bg: #ffffff;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* ヘッダー改善 */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white !important;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .navbar-brand i {
+            font-size: 1.8rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* カード改善 */
+        .main-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .main-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header-custom {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-header-custom h3 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        /* アップロードエリア改善 */
+        .upload-area {
+            border: 3px dashed var(--primary-color);
+            border-radius: 12px;
+            background: #f9fafb;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-area:hover {
+            background: #f3f4f6;
+            border-color: var(--secondary-color);
+            transform: scale(1.01);
+        }
+
+        .upload-area.dragover {
+            background: #ede9fe;
+            border-color: var(--secondary-color);
+            border-style: solid;
+        }
+
+        .upload-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* ボタン改善 */
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border: none;
+            color: white;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(99, 102, 241, 0.4);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        }
+
+        /* ステータスバッジ */
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-ready {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-processing {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-complete {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* アニメーション */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 進捗バー改善 */
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            transition: width 0.3s ease;
+        }
+
+        /* 結果表示セクション */
+        .result-section {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* レスポンシブ改善 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .upload-icon {
+                font-size: 3rem;
+            }
+        }
+
+        /* ツールチップ */
+        .info-tooltip {
+            display: inline-block;
+            margin-left: 0.5rem;
+            color: var(--text-secondary);
+            cursor: help;
+        }
+
+        /* 機能カード */
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-music-note-beamed"></i>
+                BandScore AI
+            </a>
+            <span class="navbar-text text-white">
+                次世代スマート楽譜抽出システム
+            </span>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <div class="container hero-section">
+        <h1 class="hero-title fade-in">バンドスコアから必要なパートだけを<br>瞬時に抽出</h1>
+        <p class="hero-subtitle fade-in">AI技術で楽器を自動認識。ボーカル＆キーボードパートを正確に抽出します。</p>
+    </div>
+
+    <!-- 機能紹介 -->
+    <div class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="feature-card fade-in">
+                    <i class="bi bi-cpu feature-icon"></i>
+                    <h3 class="feature-title">AI自動認識</h3>
+                    <p class="feature-description">最新のOCR技術で楽器を自動判別</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card fade-in" style="animation-delay: 0.1s">
+                    <i class="bi bi-bullseye feature-icon"></i>
+                    <h3 class="feature-title">高精度抽出</h3>
+                    <p class="feature-description">ギター・ベース・ドラムを確実に除外</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card fade-in" style="animation-delay: 0.2s">
+                    <i class="bi bi-lightning feature-icon"></i>
+                    <h3 class="feature-title">高速処理</h3>
+                    <p class="feature-description">数秒で処理完了、すぐにダウンロード可能</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card fade-in" style="animation-delay: 0.3s">
+                    <i class="bi bi-file-earmark-pdf feature-icon"></i>
+                    <h3 class="feature-title">最適化出力</h3>
+                    <p class="feature-description">見やすい4小節/行レイアウト</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="main-card fade-in">
+                    <div class="card-header-custom">
+                        <h3><i class="bi bi-upload"></i> PDFファイルをアップロード</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <!-- アップロードエリア -->
+                        <div id="upload-area" class="upload-area p-5 text-center">
+                            <i class="bi bi-cloud-arrow-up upload-icon"></i>
+                            <h4 class="mb-3">バンドスコアのPDFをドロップ</h4>
+                            <p class="text-secondary mb-3">または</p>
+                            <input type="file" id="file-input" accept=".pdf" style="display: none;">
+                            <button class="btn btn-primary-custom" onclick="document.getElementById('file-input').click()">
+                                <i class="bi bi-folder2-open me-2"></i>ファイルを選択
+                            </button>
+                            <p class="text-muted mt-3 mb-0">
+                                <small>対応形式: PDF (最大50MB)</small>
+                            </p>
+                        </div>
+
+                        <!-- アップロード進捗 -->
+                        <div id="upload-progress" class="mt-4" style="display: none;">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <span>アップロード中...</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                     role="progressbar" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <!-- エラーメッセージ -->
+                        <div id="error-message" class="alert alert-danger d-flex align-items-center mt-4" 
+                             style="display: none !important;" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <div id="error-text"></div>
+                        </div>
+
+                        <!-- 成功メッセージ -->
+                        <div id="success-message" class="alert alert-success d-flex align-items-center mt-4" 
+                             style="display: none !important;" role="alert">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <div id="success-text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 解析結果セクション -->
+                <div id="analysis-section" class="main-card mt-4 fade-in" style="display: none;">
+                    <div class="card-header-custom">
+                        <h3><i class="bi bi-clipboard-data"></i> 解析結果</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <div id="analysis-results" class="result-section">
+                            <!-- 動的に生成 -->
+                        </div>
+
+                        <!-- 抽出ボタン -->
+                        <div class="text-center mt-4">
+                            <button id="extract-button" class="btn btn-primary-custom btn-lg" onclick="startExtraction()">
+                                <i class="bi bi-magic me-2"></i>
+                                ボーカル＆キーボードを抽出
+                            </button>
+                        </div>
+
+                        <!-- 処理状況 -->
+                        <div id="extraction-progress" class="mt-4" style="display: none;">
+                            <div class="text-center">
+                                <div class="spinner-border text-primary mb-3" role="status">
+                                    <span class="visually-hidden">処理中...</span>
+                                </div>
+                                <h5>楽譜を解析中...</h5>
+                                <p class="text-secondary">しばらくお待ちください</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="text-center py-4 mt-5">
+        <p class="text-secondary mb-0">
+            <small>© 2024 BandScore AI - Powered by V17 Accurate Extractor</small>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

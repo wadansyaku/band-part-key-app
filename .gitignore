@@ -68,6 +68,12 @@ examples/
 Downloads/
 Desktop/
 
+# 開発用テストスコア
+test_scores/originals/
+test_scores/problematic/
+test_scores/expected_outputs/
+!test_scores/README.md
+
 # Testing
 .pytest_cache/
 .coverage

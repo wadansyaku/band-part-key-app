@@ -13,7 +13,7 @@ else:
 
 from core.pdf_processor import PDFProcessor
 from core.pdf_type_detector import PDFTypeDetector
-from core.final_smart_extractor_v16_complete import FinalSmartExtractorV16Complete
+from core.final_smart_extractor_v17_accurate import FinalSmartExtractorV17Accurate
 from core.measure_based_extractor import MeasureBasedExtractor
 from utils.file_handler import FileHandler
 
@@ -26,14 +26,14 @@ CORS(app, origins=app.config['CORS_ORIGINS'])
 # インスタンス化
 pdf_processor = PDFProcessor()
 pdf_type_detector = PDFTypeDetector()
-final_smart_extractor = FinalSmartExtractorV16Complete()
+final_smart_extractor = FinalSmartExtractorV17Accurate()
 measure_based_extractor = MeasureBasedExtractor()
 file_handler = FileHandler(app.config)
 
 @app.route('/')
 def index():
     """メインページ"""
-    return render_template('index.html')
+    return render_template('index_v2.html')
 
 @app.route('/api/upload', methods=['POST'])
 def upload_file():
@@ -125,8 +125,8 @@ def extract_parts():
         if not filepath:
             return jsonify({'error': 'ファイルが見つかりません'}), 404
         
-        # 最終スマート抽出V16（完全版：検出 + 実コンテンツ転送）を実行
-        app.logger.info("Final smart extraction V16 (complete: detection + actual content transfer)")
+        # 最終スマート抽出V17（正確版：ギター位置回避ロジック付き）を実行
+        app.logger.info("Final smart extraction V17 (accurate: with guitar position avoidance logic)")
         
         output_path = final_smart_extractor.extract_smart_final(filepath)
         
