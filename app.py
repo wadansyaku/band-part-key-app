@@ -13,7 +13,7 @@ else:
 
 from core.pdf_processor import PDFProcessor
 from core.pdf_type_detector import PDFTypeDetector
-from core.final_smart_extractor_v9_adaptive import FinalSmartExtractorV9Adaptive
+from core.final_smart_extractor_v15_true_ocr import FinalSmartExtractorV15TrueOCR
 from core.measure_based_extractor import MeasureBasedExtractor
 from utils.file_handler import FileHandler
 
@@ -26,7 +26,7 @@ CORS(app, origins=app.config['CORS_ORIGINS'])
 # インスタンス化
 pdf_processor = PDFProcessor()
 pdf_type_detector = PDFTypeDetector()
-final_smart_extractor = FinalSmartExtractorV9Adaptive()
+final_smart_extractor = FinalSmartExtractorV15TrueOCR()
 measure_based_extractor = MeasureBasedExtractor()
 file_handler = FileHandler(app.config)
 
@@ -125,8 +125,8 @@ def extract_parts():
         if not filepath:
             return jsonify({'error': 'ファイルが見つかりません'}), 404
         
-        # 最終スマート抽出V9（動的楽器検出）を実行
-        app.logger.info("Final smart extraction V9 (adaptive detection, vocal+keyboard only)")
+        # 最終スマート抽出V15（真のOCR + 改善マッピング）を実行
+        app.logger.info("Final smart extraction V15 (true OCR + enhanced mapping, vocal+keyboard only)")
         
         output_path = final_smart_extractor.extract_smart_final(filepath)
         
