@@ -13,7 +13,7 @@ else:
 
 from core.pdf_processor import PDFProcessor
 from core.pdf_type_detector import PDFTypeDetector
-from core.final_smart_extractor_v6 import FinalSmartExtractorV6
+from core.final_smart_extractor_v7_hybrid import FinalSmartExtractorV7Hybrid
 from core.measure_based_extractor import MeasureBasedExtractor
 from utils.file_handler import FileHandler
 
@@ -26,7 +26,7 @@ CORS(app, origins=app.config['CORS_ORIGINS'])
 # インスタンス化
 pdf_processor = PDFProcessor()
 pdf_type_detector = PDFTypeDetector()
-final_smart_extractor = FinalSmartExtractorV6()
+final_smart_extractor = FinalSmartExtractorV7Hybrid()
 measure_based_extractor = MeasureBasedExtractor()
 file_handler = FileHandler(app.config)
 
