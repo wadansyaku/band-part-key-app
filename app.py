@@ -33,7 +33,7 @@ file_handler = FileHandler(app.config)
 @app.route('/')
 def index():
     """メインページ"""
-    return render_template('index_v2.html')
+    return render_template('index_v3.html')
 
 @app.route('/api/upload', methods=['POST'])
 def upload_file():
