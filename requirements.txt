@@ -18,6 +18,8 @@ numpy==1.24.3
 python-dotenv==1.0.0
 werkzeug==3.0.1
 gunicorn==21.2.0
+requests==2.31.0
+jsonschema==4.21.1
 
 # File handling
 python-magic==0.4.27

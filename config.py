@@ -31,6 +31,15 @@ class Config:
     # PDF処理設定
     PDF_DPI = 300  # PDF画像変換時のDPI
     PREVIEW_DPI = 150  # プレビュー用の低解像度DPI
+
+    # AIレイアウト解析設定
+    AI_API_KEY = os.environ.get('AI_API_KEY')
+    AI_BASE_URL = os.environ.get('AI_BASE_URL', 'https://api.openai.com/v1/responses')
+    AI_MODEL = os.environ.get('AI_MODEL', 'gpt-4o-mini')
+    AI_CONFIDENCE_THRESHOLD = float(os.environ.get('AI_CONFIDENCE_THRESHOLD', 0.6))
+    AI_IMAGE_DPI = int(os.environ.get('AI_IMAGE_DPI', 200))
+    AI_MAX_PAGES = int(os.environ.get('AI_MAX_PAGES', 10))
+    AI_REQUEST_TIMEOUT = int(os.environ.get('AI_REQUEST_TIMEOUT', 60))
     
     @staticmethod
     def init_app(app):

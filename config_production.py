@@ -32,6 +32,15 @@ class ProductionConfig:
     CLEANUP_INTERVAL = 3600  # 1時間
     FILE_RETENTION_HOURS = 1  # 1時間後に削除
     FILE_RETENTION_MINUTES = 60  # 60分後に削除
+
+    # AIレイアウト解析設定
+    AI_API_KEY = os.environ.get('AI_API_KEY')
+    AI_BASE_URL = os.environ.get('AI_BASE_URL', 'https://api.openai.com/v1/responses')
+    AI_MODEL = os.environ.get('AI_MODEL', 'gpt-4o-mini')
+    AI_CONFIDENCE_THRESHOLD = float(os.environ.get('AI_CONFIDENCE_THRESHOLD', 0.6))
+    AI_IMAGE_DPI = int(os.environ.get('AI_IMAGE_DPI', 200))
+    AI_MAX_PAGES = int(os.environ.get('AI_MAX_PAGES', 10))
+    AI_REQUEST_TIMEOUT = int(os.environ.get('AI_REQUEST_TIMEOUT', 60))
     
     @staticmethod
     def init_app(app):
