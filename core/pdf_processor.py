@@ -46,7 +46,7 @@ class PDFProcessor:
         except Exception as e:
             raise Exception(f"ページ抽出に失敗しました: {str(e)}")
     
-    def generate_preview(self, pdf_path, page_num, file_id, dpi=150):
+    def generate_preview(self, pdf_path, page_num, file_id=None, dpi=150):
         """指定ページのプレビュー画像を生成"""
         try:
             pdf_document = fitz.open(pdf_path)
@@ -66,7 +66,8 @@ class PDFProcessor:
             img = Image.open(io.BytesIO(img_data))
             
             # プレビュー画像を保存
-            preview_path = os.path.join(self.temp_dir, f"{file_id}_preview_p{page_num}.png")
+            preview_prefix = file_id or "preview"
+            preview_path = os.path.join(self.temp_dir, f"{preview_prefix}_preview_p{page_num}.png")
             img.save(preview_path, "PNG")
             
             pdf_document.close()

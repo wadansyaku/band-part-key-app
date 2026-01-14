@@ -1,10 +1,14 @@
 // グローバル変数
 let currentFileId = null;
 let analysisData = null;
+let aiLayoutData = null;
+let aiPreviewLoaded = false;
 
 // ページ読み込み時の初期化
 document.addEventListener('DOMContentLoaded', function() {
     setupUploadArea();
+    setupModeControls();
+    updateAiMargin();
 });
 
 // アップロードエリアの設定
@@ -43,6 +47,44 @@ function setupUploadArea() {
             handleFileUpload(e.target.files[0]);
         }
     });
+}
+
+function setupModeControls() {
+    const modeFast = document.getElementById('mode-fast');
+    const modeAi = document.getElementById('mode-ai');
+    const previewImage = document.getElementById('ai-preview-image');
+
+    if (!modeFast || !modeAi) {
+        return;
+    }
+
+    const updateModeView = () => {
+        const aiPanel = document.getElementById('ai-panel');
+        if (!aiPanel) {
+            return;
+        }
+        if (modeAi.checked) {
+            aiPanel.style.display = 'block';
+            setAiPreviewMessage('AI解析ボタンを押してレイアウトを確認してください。');
+            if (currentFileId) {
+                const previewImage = document.getElementById('ai-preview-image');
+                previewImage.src = `/api/preview/${currentFileId}/0`;
+            }
+        } else {
+            aiPanel.style.display = 'none';
+        }
+    };
+
+    modeFast.addEventListener('change', updateModeView);
+    modeAi.addEventListener('change', updateModeView);
+
+    if (previewImage) {
+        previewImage.addEventListener('load', () => {
+            if (aiPreviewLoaded) {
+                renderAiOverlay();
+            }
+        });
+    }
 }
 
 // ファイルアップロード処理
@@ -167,11 +209,131 @@ function displayAnalysisResults(analysis) {
     
     // 解析セクションを表示
     analysisSection.style.display = 'block';
+
+    const modeFast = document.getElementById('mode-fast');
+    if (modeFast) {
+        modeFast.checked = true;
+    }
+
+    const aiPanel = document.getElementById('ai-panel');
+    if (aiPanel) {
+        aiPanel.style.display = 'none';
+    }
+
+    const previewImage = document.getElementById('ai-preview-image');
+    if (previewImage) {
+        previewImage.src = `/api/preview/${currentFileId}/0`;
+    }
     
     // 抽出ボタンを有効化
     const extractButton = document.getElementById('extract-button');
     if (extractButton) {
         extractButton.disabled = false;
+    }
+}
+
+function getSelectedMode() {
+    const modeAi = document.getElementById('mode-ai');
+    if (modeAi && modeAi.checked) {
+        return 'ai_precision';
+    }
+    return 'fast';
+}
+
+async function loadAiPreview() {
+    if (!currentFileId) {
+        showError('ファイルが選択されていません');
+        return;
+    }
+
+    const message = document.getElementById('ai-preview-message');
+    if (message) {
+        message.textContent = 'AI解析中...';
+    }
+
+    try {
+        const response = await fetch(`/api/ai-layout/${currentFileId}/0`);
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'AI解析に失敗しました');
+        }
+        const data = await response.json();
+        aiLayoutData = data.layout;
+        aiPreviewLoaded = true;
+        renderAiOverlay();
+        setAiPreviewMessage('bboxを確認し、必要ならマージンを調整してください。');
+    } catch (error) {
+        aiLayoutData = null;
+        aiPreviewLoaded = false;
+        setAiPreviewMessage(error.message);
+    }
+}
+
+function renderAiOverlay() {
+    const overlay = document.getElementById('ai-overlay');
+    const img = document.getElementById('ai-preview-image');
+    if (!overlay || !img || !aiLayoutData) {
+        return;
+    }
+
+    const margin = getAiMargin();
+    const imageWidth = aiLayoutData.image_width;
+    const imageHeight = aiLayoutData.image_height;
+
+    const scaleX = img.clientWidth / imageWidth;
+    const scaleY = img.clientHeight / imageHeight;
+
+    overlay.style.width = `${img.clientWidth}px`;
+    overlay.style.height = `${img.clientHeight}px`;
+    overlay.innerHTML = '';
+
+    aiLayoutData.parts.forEach((part) => {
+        const bbox = applyMargin(part.bbox, margin, imageWidth, imageHeight);
+        const box = document.createElement('div');
+        box.className = 'bbox-overlay';
+        box.style.left = `${bbox.x * scaleX}px`;
+        box.style.top = `${bbox.y * scaleY}px`;
+        box.style.width = `${bbox.width * scaleX}px`;
+        box.style.height = `${bbox.height * scaleY}px`;
+
+        const label = document.createElement('div');
+        label.className = 'bbox-label';
+        label.textContent = `${part.part_name} (${Math.round(part.confidence * 100)}%)`;
+        box.appendChild(label);
+        overlay.appendChild(box);
+    });
+}
+
+function applyMargin(bbox, margin, maxWidth, maxHeight) {
+    const x = Math.max(bbox.x - margin, 0);
+    const y = Math.max(bbox.y - margin, 0);
+    const width = Math.min(bbox.width + margin * 2, maxWidth - x);
+    const height = Math.min(bbox.height + margin * 2, maxHeight - y);
+    return { x, y, width, height };
+}
+
+function getAiMargin() {
+    const slider = document.getElementById('ai-margin');
+    if (!slider) {
+        return 20;
+    }
+    return parseInt(slider.value, 10);
+}
+
+function updateAiMargin() {
+    const valueLabel = document.getElementById('ai-margin-value');
+    if (valueLabel) {
+        valueLabel.textContent = getAiMargin();
+    }
+    if (aiPreviewLoaded) {
+        renderAiOverlay();
+    }
+}
+
+function setAiPreviewMessage(text) {
+    const message = document.getElementById('ai-preview-message');
+    if (message) {
+        message.textContent = text;
     }
 }
 
@@ -192,6 +354,7 @@ async function startExtraction() {
     showExtractionProgress();
     
     try {
+        const mode = getSelectedMode();
         const response = await fetch('/api/extract', {
             method: 'POST',
             headers: {
@@ -199,8 +362,8 @@ async function startExtraction() {
             },
             body: JSON.stringify({
                 file_id: currentFileId,
-                mode: 'final_smart',
-                measures_per_line: 4
+                mode: mode,
+                margin: getAiMargin()
             })
         });
         
@@ -213,7 +376,11 @@ async function startExtraction() {
         
         // 処理完了
         hideExtractionProgress();
-        showSuccess('抽出が完了しました！ダウンロードを開始します...');
+        if (result.fallback) {
+            showSuccess(`AI精度モードから高速モードへ切り替えました: ${result.fallback_message}`);
+        } else {
+            showSuccess('抽出が完了しました！ダウンロードを開始します...');
+        }
         
         // ダウンロード
         downloadResult(result.output_id);

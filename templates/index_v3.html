@@ -199,6 +199,83 @@
             z-index: -1;
         }
 
+        .mode-card {
+            background: rgba(15, 76, 117, 0.12);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .mode-option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.6rem 0;
+        }
+
+        .mode-option input[type="radio"] {
+            accent-color: var(--highlight-color);
+        }
+
+        .ai-panel {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px dashed var(--highlight-color);
+            border-radius: 10px;
+            background: rgba(15, 76, 117, 0.08);
+        }
+
+        .preview-wrapper {
+            position: relative;
+            max-width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        #ai-preview-image {
+            width: 100%;
+            display: block;
+        }
+
+        #ai-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .bbox-overlay {
+            position: absolute;
+            border: 2px solid rgba(50, 130, 184, 0.9);
+            box-shadow: 0 0 0 2px rgba(15, 76, 117, 0.4) inset;
+            background: rgba(50, 130, 184, 0.12);
+        }
+
+        .bbox-label {
+            position: absolute;
+            top: -24px;
+            left: 0;
+            background: rgba(15, 76, 117, 0.85);
+            color: var(--text-light);
+            font-size: 0.75rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .slider-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .slider-row input[type="range"] {
+            flex: 1;
+        }
+
         .btn-elegant:hover::before {
             left: 0;
         }
@@ -482,6 +559,46 @@
                 
                 <div id="analysis-results">
                     <!-- 動的に生成 -->
+                </div>
+
+                <div class="mode-card">
+                    <h5 class="mb-3" style="font-weight: 300; letter-spacing: 0.05em;">
+                        <i class="bi bi-toggles me-2"></i>抽出モード
+                    </h5>
+                    <div class="mode-option">
+                        <input type="radio" id="mode-fast" name="extract-mode" value="fast" checked>
+                        <label for="mode-fast">高速モード（デフォルト・外部AI送信なし）</label>
+                    </div>
+                    <div class="mode-option">
+                        <input type="radio" id="mode-ai" name="extract-mode" value="ai_precision">
+                        <label for="mode-ai">AI精度モード（外部AIに画像送信・高精度）</label>
+                    </div>
+                    <small class="text-muted">
+                        AI精度モードは明示的な選択時のみ有効です。プレビューでbboxを確認してください。
+                    </small>
+
+                    <div id="ai-panel" class="ai-panel" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                            <div>
+                                <strong>AIレイアウトプレビュー</strong>
+                                <div class="text-muted small">bboxとマージンを確認・調整できます</div>
+                            </div>
+                            <button class="btn-elegant" type="button" onclick="loadAiPreview()">
+                                <i class="bi bi-magic me-2"></i>AIで解析
+                            </button>
+                        </div>
+
+                        <div class="preview-wrapper mt-3">
+                            <img id="ai-preview-image" alt="AI preview" />
+                            <div id="ai-overlay"></div>
+                        </div>
+
+                        <div class="slider-row">
+                            <label for="ai-margin" class="small text-muted">マージン: <span id="ai-margin-value">20</span>px</label>
+                            <input type="range" id="ai-margin" min="0" max="80" value="20" oninput="updateAiMargin()" />
+                        </div>
+                        <small id="ai-preview-message" class="text-muted d-block mt-2"></small>
+                    </div>
                 </div>
 
                 <div class="text-center mt-4">

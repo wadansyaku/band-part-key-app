@@ -5,7 +5,10 @@ import os
 import uuid
 from datetime import datetime
 
+from dotenv import load_dotenv
+
 # 環境に応じて設定を選択
+load_dotenv()
 if os.environ.get('FLASK_ENV') == 'production':
     from config_production import ProductionConfig as Config
 else:
@@ -15,6 +18,7 @@ from core.pdf_processor import PDFProcessor
 from core.pdf_type_detector import PDFTypeDetector
 from core.final_smart_extractor_v17_accurate import FinalSmartExtractorV17Accurate
 from core.measure_based_extractor import MeasureBasedExtractor
+from core.ai_layout_extractor import AILayoutExtractor, AILayoutError
 from utils.file_handler import FileHandler
 
 app = Flask(__name__)
@@ -29,6 +33,7 @@ pdf_type_detector = PDFTypeDetector()
 final_smart_extractor = FinalSmartExtractorV17Accurate()
 measure_based_extractor = MeasureBasedExtractor()
 file_handler = FileHandler(app.config)
+ai_layout_extractor = AILayoutExtractor(app.config)
 
 @app.route('/')
 def index():
@@ -116,6 +121,8 @@ def extract_parts():
     """パートの抽出 - 最終スマート抽出のみ使用"""
     data = request.json
     file_id = data.get('file_id')
+    mode = data.get('mode', 'fast')
+    margin = int(data.get('margin', 0))
     
     if not file_id:
         return jsonify({'error': 'ファイルIDが指定されていません'}), 400
@@ -125,25 +132,56 @@ def extract_parts():
         if not filepath:
             return jsonify({'error': 'ファイルが見つかりません'}), 404
         
+        if mode == 'ai_precision':
+            app.logger.info("AI precision extraction requested")
+            try:
+                temp_output_path = os.path.join(
+                    file_handler.temp_folder,
+                    f"{file_id}_ai_precision.pdf"
+                )
+                ai_result = ai_layout_extractor.extract_parts_pdf(
+                    filepath,
+                    temp_output_path,
+                    margin_px=margin,
+                )
+                return jsonify({
+                    'id': file_id,
+                    'output_id': f"{file_id}_ai_precision",
+                    'status': 'completed',
+                    'mode': 'ai_precision',
+                    'ai_confidence': ai_result['confidence'],
+                    'parts_extracted': ['vocal', 'keyboard'],
+                    'fallback': False
+                }), 200
+            except AILayoutError as e:
+                app.logger.warning(f"AI precision failed, fallback to fast: {e}")
+                fallback_message = str(e)
+            except Exception as e:
+                app.logger.error(f"AI precision error: {e}")
+                fallback_message = "AI精度モードでエラーが発生したため高速モードに切り替えました"
+        else:
+            fallback_message = None
+
         # 最終スマート抽出V17（正確版：ギター位置回避ロジック付き）を実行
         app.logger.info("Final smart extraction V17 (accurate: with guitar position avoidance logic)")
-        
+
         output_path = final_smart_extractor.extract_smart_final(filepath)
-        
+
         if output_path and os.path.exists(output_path):
             temp_output_path = os.path.join(file_handler.temp_folder, f"{file_id}_final_smart.pdf")
             import shutil
             shutil.copy2(output_path, temp_output_path)
-            
+
             return jsonify({
                 'id': file_id,
                 'output_id': f"{file_id}_final_smart",
                 'status': 'completed',
                 'mode': 'final_smart',
-                'parts_extracted': ['vocal_integrated', 'keyboard']
+                'parts_extracted': ['vocal_integrated', 'keyboard'],
+                'fallback': mode == 'ai_precision',
+                'fallback_message': fallback_message
             }), 200
-        else:
-            return jsonify({'error': '抽出に失敗しました'}), 500
+        return jsonify({'error': '抽出に失敗しました'}), 500
         
     except Exception as e:
         app.logger.error(f"Extraction error: {str(e)}")
@@ -183,7 +221,12 @@ def get_preview(file_id, page_num):
             return jsonify({'error': 'ファイルが見つかりません'}), 404
         
         # プレビュー画像を生成
-        preview_path = pdf_processor.generate_preview(filepath, page_num)
+        preview_path = pdf_processor.generate_preview(
+            filepath,
+            page_num,
+            file_id=file_id,
+            dpi=app.config.get('PREVIEW_DPI', 150)
+        )
         
         if preview_path and os.path.exists(preview_path):
             return send_file(preview_path, mimetype='image/png')
@@ -192,6 +235,25 @@ def get_preview(file_id, page_num):
             
     except Exception as e:
         return jsonify({'error': f'プレビュー取得中にエラーが発生しました: {str(e)}'}), 500
+
+@app.route('/api/ai-layout/<file_id>/<int:page_num>', methods=['GET'])
+def get_ai_layout(file_id, page_num):
+    """AIレイアウト推定の取得"""
+    try:
+        filepath = file_handler.get_upload_path(file_id)
+        if not filepath:
+            return jsonify({'error': 'ファイルが見つかりません'}), 404
+
+        layout_result = ai_layout_extractor.extract_layout_for_page(filepath, page_num)
+        return jsonify({
+            'layout': layout_result.layout
+        }), 200
+    except AILayoutError as e:
+        app.logger.warning(f"AI layout error: {e}")
+        return jsonify({'error': str(e)}), 400
+    except Exception as e:
+        app.logger.error(f"AI layout error: {str(e)}")
+        return jsonify({'error': f'AIレイアウト取得中にエラーが発生しました: {str(e)}'}), 500
 
 @app.route('/api/cleanup', methods=['POST'])
 def cleanup_old_files():
